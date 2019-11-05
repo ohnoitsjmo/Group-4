@@ -1,5 +1,5 @@
 import { Entity, Column, PrimaryGeneratedColumn } from 'typeorm';
-import Orders from './orders'
+import Order from './order'
 
 @Entity()
 export default class User {
@@ -27,6 +27,6 @@ export default class User {
   @Column({ type: "enum", enum: ["Admin", "Employee", "Customer"], default: "Customer"})
   role
 
-  @OneToMany(() => Orders, (orders) => orders.customer_id,{eager:true})
+  @OneToMany(() => Order, (order) => order.user,{eager:true})
   orders
 }
