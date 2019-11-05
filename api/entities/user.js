@@ -1,4 +1,4 @@
-import { Entity, Column, PrimaryGeneratedColumn } from 'typeorm';
+import { Entity, Column, PrimaryGeneratedColumn, OneToMany, JoinTable } from 'typeorm';
 import Order from './order'
 
 @Entity()
@@ -6,10 +6,10 @@ export default class User {
   @PrimaryGeneratedColumn()
   id
 
-  @column ({ type: 'varchar', unique: true })
+  @Column ({ type: 'varchar', unique: true })
   first
 
-  @column ({ type: 'varchar', unique: true })
+  @Column ({ type: 'varchar', unique: true })
   last
 
   @Column({ type: 'varchar', unique: true })

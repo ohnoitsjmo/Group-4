@@ -1,6 +1,6 @@
-import { Entity, Column, PrimaryGeneratedColumn, ManyToOne, ManyToMany } from 'typeorm';
-import {User} from './user'
-import {Product} from './product'
+import { Entity, Column, PrimaryGeneratedColumn, ManyToOne, ManyToMany, JoinTable } from 'typeorm';
+import User from '../entities/user';
+import Product from '../entities/product'
 
 
 @Entity()
@@ -13,9 +13,6 @@ export default class Order {
 
   @Column({ type: 'float', unique: false })
   price
-
-  @Column({ type: 'varchar', unique: false })
-  status
 
   @ManyToOne(type => User, user => user.orders)
   user
