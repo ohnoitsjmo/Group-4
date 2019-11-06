@@ -1,5 +1,7 @@
 import Vue from "vue";
 import Router from "vue-router";
+import Login from "./common/layouts/login/Login.vue";
+import Orders from "./common/layouts/order_management/Orders.vue";
 import Home from "./common/layouts/home/Home.vue";
 
 Vue.use(Router);
@@ -21,6 +23,16 @@ export default new Router({
       // which is lazy-loaded when the route is visited.
       component: () =>
         import(/* webpackChunkName: "about" */ "./common/layouts/shop/Shop.vue")
+    },
+    {
+      path: "/login",
+      name: "login",
+      component: Login
+    },
+    {
+      path: "/orders",
+      name: "orders",
+      component: Orders
     }
   ]
 });
