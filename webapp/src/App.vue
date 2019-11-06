@@ -1,5 +1,8 @@
 <template>
   <div id="app">
+      <div id="logo">
+        <img alt="Vue logo" src="@/assets/logo.png" />
+      </div>
     <div id="nav">
       <router-link to="/">Home</router-link> |
       <router-link to="/shop">Shop</router-link>
@@ -25,5 +28,9 @@
       color: #42b983;
     }
   }
+}
+#logo {
+  text-align: left;
+  margin: 0 50px;
 }
 </style>
