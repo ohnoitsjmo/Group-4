@@ -8,6 +8,8 @@ import config from './config/passport';
 import login from './routes/login';
 import announcement from './routes/announcement';
 import order from './routes/order';
+import category from './routes/category';
+import product from './routes/product';
 
 
 // Setting up port
@@ -29,6 +31,9 @@ config();
 app.use(login(passport));
 app.use(announcement);
 app.use(order);
+app.use(category);
+app.use(product);
+
 // respond with "hello world" when a GET request is made to the homepage
 app.get('/', (_req, res) => {
   res.send('hello world');

@@ -24,7 +24,7 @@ export default class Product {
   @Column({ type: 'int', unique: false })
   saleStatus
 
-  @ManyToMany(type => Category)
+  /*@ManyToMany(type => Category)
   @JoinTable()
-  categories
+  categories*/
 }
