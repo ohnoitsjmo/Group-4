@@ -7,7 +7,10 @@
       <router-link to="/">Home</router-link> |
       <router-link to="/shop">Shop</router-link> |
 	    <router-link to="/profile">Profile</router-link> |
-      <router-link to="/cart">Cart</router-link>
+      <router-link to="/cart">Cart</router-link> | 
+      <router-link to="/about">About</router-link> |
+      <router-link to="/login">Login</router-link> |
+      <router-link to="/orders">Orders</router-link>
        <!-- <v-card-action>
          <v-flex text-xs-right>
          <v-btn color= #42b983 absolute :style="{bottom: '65%', right: '0%', transform:'translateX(-10%)'}">
@@ -15,10 +18,6 @@
          </v-btn>
          </v-flex> 
        </v-card-action> -->
-      <router-link to="/about">About</router-link> |
-      <router-link to="/login">Login</router-link> |
-      <router-link to="/orders">Orders</router-link> |
-      <router-link to="/shop">Shop</router-link>
     </div>
     <router-view />
   </div>
