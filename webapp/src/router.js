@@ -1,5 +1,8 @@
 import Vue from "vue";
 import Router from "vue-router";
+import Login from "./common/layouts/login/Login.vue";
+import Signup from "./common/layouts/signup/Signup.vue";
+import Orders from "./common/layouts/order_management/Orders.vue";
 import Home from "./common/layouts/home/Home.vue";
 import Shop from "./common/layouts/shop/Shop.vue";
 import Cart from "./common/layouts/cart/Cart.vue";
@@ -39,6 +42,23 @@ export default new Router({
       // this generates a separate chunk (about.[hash].js) for this route
       // which is lazy-loaded when the route is visited.
       component: Cart
+      component: () =>
+        import(/* webpackChunkName: "about" */ "./common/layouts/shop/Shop.vue")
+    },
+    {
+      path: "/login",
+      name: "login",
+      component: Login
+    },
+    {
+      path: "/signup",
+      name: "signup",
+      component: Signup
+    },
+    {
+      path: "/orders",
+      name: "orders",
+      component: Orders
     }
   ]
 });
