@@ -1,24 +1,22 @@
 <template>
   <div id="item-name" class="name">
     <v-card
-      class="mx-auto"
-      max-width="400"
+     
+      max-width="300"
     >
     <v-img
       contain
       class="white--text align-end"
-      height="200px"
-      width="200px"
+      height="300px"
+      width="300px"
       :src="imageLink"
     >
       <v-card-title>{{itemName}}</v-card-title>
     </v-img>
 
-    <v-card-subtitle class="pb-0">Pre-owned</v-card-subtitle>
+    <v-card-subtitle class="pb-0">$0.99</v-card-subtitle>
 
     <v-card-text class="text--primary">
-      <div>$0.99</div>
-
       <div>A bajillion left in stock</div>
     </v-card-text>
 
@@ -30,7 +28,14 @@
         Share
       </v-btn>
 
+     
       <v-btn
+        color="orange"
+        text
+      >
+        Info
+      </v-btn>
+       <v-btn
         color="orange"
         text
       >
