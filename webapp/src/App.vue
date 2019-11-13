@@ -5,7 +5,6 @@
       <router-link to="/shop">Shop</router-link> |
 	    <router-link to="/profile">Profile</router-link> |
       <router-link to="/cart">Cart</router-link> | 
-      <router-link to="/about">About</router-link> |
       <router-link to="/login">Login</router-link> |
       <router-link to="/orders">Orders</router-link>
        <!-- <v-card-action>
