@@ -5,21 +5,21 @@
           <mdb-card>
             <div class="header pt-3 peach-gradient">
               <mdb-row class="d-flex justify-content-center">
-                <h3 class="white-text mb-3 pt-3 font-weight-bold">Log in</h3>
+                <h3 class="white-text mb-3 pt-3 font-weight-bold">Sign Up</h3>
               </mdb-row>
             </div>
             <mdb-card-body class="mx-4 mt-4">
               <mdb-input label="Your email" type="text"/>
               <mdb-input label="Your password" type="password" containerClass="mb-0"/>
-              <p class="font-small grey-text d-flex justify-content-end">Forgot <a href="#" class="dark-grey-text ml-1 font-weight-bold"> Password?</a></p>
+              <mdb-input label="Confirm password" type="password" containerClass="mb-0"/>
               <mdb-row class="d-flex align-items-center mb-4 mt-5">
                 <mdb-col md="5" class="d-flex align-items-start">
                   <div class="text-center">
-                    <router-link to="/"><mdb-btn color="grey" rounded type="button" class="z-depth-1a">Log in</mdb-btn></router-link>
+                    <router-link to="/"><mdb-btn color="grey" rounded type="button" class="z-depth-1a">Sign Up</mdb-btn></router-link>
                   </div>
                 </mdb-col>
                 <mdb-col md="7" class="d-flex justify-content-end">
-                  <p class="font-small grey-text mt-3">Don't have an account? <a href="/signup" class="dark-grey-text ml-1 font-weight-bold"> Sign up</a></p>
+                  <p class="font-small grey-text mt-3">Already have an account? <a href="/login" class="dark-grey-text ml-1 font-weight-bold"> Log in</a></p>
                 </mdb-col>
               </mdb-row>
             </mdb-card-body>
@@ -30,7 +30,7 @@
 </template>
 
 <script>
-  import { mdbRow, mdbCol, mdbCard, mdbCardBody, mdbInput, mdbBtn, mdbIcon } from 'mdbvue';
+  import { mdbRow, mdbCol, mdbCard, mdbCardBody, mdbInput, mdbBtn } from 'mdbvue';
   export default {
     name: 'FormsPage',
     components: {
@@ -39,8 +39,7 @@
       mdbCard,
       mdbCardBody,
       mdbInput,
-      mdbBtn,
-      mdbIcon
+      mdbBtn
     }
   }
 </script>
@@ -72,6 +71,7 @@
     box-shadow: 0 1px 0 0 #fd9267; }
 
   .form-gradient input[type=password]:focus:not([readonly]) + label {
-    color: #4f4f4f; }
+    color: #4f4f4f; 
+    }
 
 </style>
