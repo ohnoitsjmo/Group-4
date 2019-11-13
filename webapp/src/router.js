@@ -1,6 +1,7 @@
 import Vue from "vue";
 import Router from "vue-router";
 import Login from "./common/layouts/login/Login.vue";
+import Signup from "./common/layouts/signup/Signup.vue";
 import Orders from "./common/layouts/order_management/Orders.vue";
 import Home from "./common/layouts/home/Home.vue";
 
@@ -28,6 +29,11 @@ export default new Router({
       path: "/login",
       name: "login",
       component: Login
+    },
+    {
+      path: "/signup",
+      name: "signup",
+      component: Signup
     },
     {
       path: "/orders",
