@@ -1,10 +1,25 @@
 <template>
   <div id="cat_name" class="cat-name">
     <h1>{{categoryName}}</h1>
-    <li v-for="item in items">
-      <Item :itemName="item.name"
-            :imageLink="item.image"/>
-    </li>
+    <v-container fluid>
+      <v-row
+        >
+        <template v-for="item in items">
+          <v-col :key="item">
+            <v-card
+              class="pa-2"
+              outlined
+              tile
+            >
+              <Item v-if="item.category == categoryName"
+                    :itemName="item.name"
+                    :imageLink="item.image"/>
+            </v-card>
+          </v-col>
+        </template>
+      </v-row>
+    </v-container>
+          
   </div>
 </template>
 
@@ -16,23 +31,8 @@ export default {
     Item
   },
   props: {
-    categoryName: String
-  },
-  data() {
-    return {
-        items: [
-        {
-          name: "Not a French Horn",
-          image: "https://siterepository.s3.amazonaws.com/5418/clarinet_pic.jpg",
-          category: "Woodwinds"
-        },
-        {
-          name: "Floot",
-          image: "http://www.gemeinhardt.com/media/catalog/product/cache/1/image/9df78eab33525d08d6e5fb8d27136e95/l/g/lg-33ssb_1.jpg",
-          category: "Woodwinds"
-        }
-      ],
-    }
+    categoryName: String,
+    items: Array
   }
 };
 </script>
