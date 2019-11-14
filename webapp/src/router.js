@@ -1,5 +1,6 @@
 import Vue from "vue";
 import Router from "vue-router";
+import Home from "./common/layouts/home/Home.vue";
 import Login from "./common/layouts/login/Login.vue";
 import Signup from "./common/layouts/signup/Signup.vue";
 import Orders from "./common/layouts/order_management/Orders.vue";
