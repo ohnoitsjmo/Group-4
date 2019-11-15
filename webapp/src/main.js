@@ -7,6 +7,9 @@ import router from "./router";
 import { createStore } from "./store";
 import Vuetify from "vuetify";
 import "vuetify/dist/vuetify.min.css";
+import vSelect from 'vue-select'
+
+Vue.component('v-select', vSelect)
 
 Vue.config.productionTip = false;
 Vue.use(Vuetify);

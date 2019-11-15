@@ -1,7 +1,7 @@
     <template>
       <div class="cart">
-        <header>
-          <body >Cart Review & Checkout</body>
+        <header style='margin-top: 127px'>
+          Cart Review & Checkout
         </header>
   <v-stepper v-model="e1" vertical>
     <v-stepper-header>
@@ -19,11 +19,13 @@
     <v-stepper-items>
       <v-stepper-content step="1">
         <v-card
-          class="mb-12"
-          color="grey lighten-1"
-          height="250px"
+          class="scroll"
+          color="white"
+          height="500px"
         >
-        <reviewDetails/>
+        
+        <ReviewCartDetails/>
+        
         </v-card>
 
         <v-btn
@@ -39,7 +41,7 @@
       <v-stepper-content step="2">
         <v-card
           class="mb-12"
-          color="grey lighten-1"
+          color="white"
           height="250px"
         >
          <PaymentDetails/>
@@ -51,25 +53,37 @@
         >
           Continue
         </v-btn>
-
-        <!-- <v-btn color= "#E53935">Cancel</v-btn> -->
+        <spacer></spacer>
+        <v-btn 
+        color= "#E53935"
+        @click="e1 = 1"
+        >Back
+        </v-btn>
       </v-stepper-content>
 
       <v-stepper-content step="3">
         <v-card
           class="mb-12"
-          color="grey lighten-1"
+          color="white"
           height="250px"
-        ></v-card>
+        >
+
+        <CheckoutDetails/>
+        </v-card>
 
         <v-btn
           color= #42b983
-          @click="e1 = 1"
+          
         >
-          Continue
+          Place Order
         </v-btn>
 
-        <v-btn color= "#E53935">Cancel</v-btn>
+        <v-btn 
+        color= "#E53935"
+        @click="e1 = 1"
+        >
+        Cancel
+        </v-btn>
       </v-stepper-content>
     </v-stepper-items>
   </v-stepper>
@@ -79,10 +93,14 @@
 
   <script>
     import PaymentDetails from "@/common/components/cart/PaymentDetails.vue";
+    import ReviewCartDetails from "@/common/components/cart/ReviewCartDetails.vue";
+    import CheckoutDetails from "@/common/components/cart/CheckoutDetails.vue";
     export default {
       name: 'CartDetails',
       components: {
-      PaymentDetails
+      PaymentDetails,
+      ReviewCartDetails,
+      CheckoutDetails
       },
       data() {
         return {
@@ -106,6 +124,9 @@
     background: #eee;
     color: #42b983;
     font-size: 30px;
+    }
 
+    .scroll {
+      overflow-y: auto;
     }
   </style>
