@@ -9,15 +9,15 @@
       class="white--text align-end"
       height="300px"
       width="300px"
-      :src="imageLink"
+      :src="item.image"
     >
-      <v-card-title>{{itemName}}</v-card-title>
+      <v-card-title>{{item.name}}</v-card-title>
     </v-img>
 
-    <v-card-subtitle class="pb-0">$0.99</v-card-subtitle>
+    <v-card-subtitle class="pb-0">Price: {{item.price}}</v-card-subtitle>
 
     <v-card-text class="text--primary">
-      <div>A bajillion left in stock</div>
+      <div>{{item.remainingInventory}} remaining in stock</div>
     </v-card-text>
 
     <v-card-actions>
@@ -50,8 +50,7 @@
 export default {
   name: 'Item',
   props: {
-    itemName: String,
-    imageLink: String
+    item: Object
   }
 };
 </script>

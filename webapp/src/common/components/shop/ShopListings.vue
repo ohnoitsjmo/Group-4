@@ -5,15 +5,14 @@
       <v-row
         >
         <template v-for="item in items">
-          <v-col :key="item">
+          <v-col :key="item.id">
             <v-card
               class="pa-2"
               outlined
               tile
             >
-              <Item v-if="item.category == categoryName"
-                    :itemName="item.name"
-                    :imageLink="item.image"/>
+              <Item v-if="item.category == categoryName.toLowerCase()"
+                    :item="item"/>
             </v-card>
           </v-col>
         </template>
