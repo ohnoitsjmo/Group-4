@@ -8,6 +8,7 @@
           <div class="intro-lead-in">Announcements</div>
           <!-- <div class="intro-heading text-uppercase">It's Nice To Meet You</div> -->
           <!-- <a class="btn btn-primary btn-xl text-uppercase js-scroll-trigger" href="#services">Tell Me More</a> -->
+            <p class=" " style="margin-left:200px; margin-right: 200px; font-size: 40px">Lorem ipsum dolor sit amet!</p>
         </div>
       </div>
     </header>
@@ -19,7 +20,7 @@
           <div class="col-lg-12 text-center">
             <h2 class="section-heading text-uppercase">ABOUT US</h2>
             <!-- <h3 class="section-subheading text-muted">Insert Bio Here.</h3> -->
-            <p class="text-muted">Insert Bio Here.</p>
+            <p class="text-muted " style="margin-left:200px; margin-right: 200px">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Sed turpis tincidunt id aliquet risus. Consequat interdum varius sit amet mattis vulputate enim. Sem nulla pharetra diam sit amet nisl suscipit. Morbi tempus iaculis urna id volutpat. Interdum velit laoreet id donec ultrices tincidunt arcu non. Augue lacus viverra vitae congue eu. Diam in arcu cursus euismod quis viverra nibh cras. Consequat mauris nunc congue nisi vitae suscipit tellus mauris. Dictumst quisque sagittis purus sit. Vestibulum rhoncus est pellentesque elit. Et netus et malesuada fames ac. Eget nullam non nisi est sit. Viverra maecenas accumsan lacus vel facilisis. Nibh tortor id aliquet lectus proin. Sit amet mattis vulputate enim nulla aliquet. Pulvinar etiam non quam lacus. Faucibus vitae aliquet nec ullamcorper sit amet risus nullam. Ut venenatis tellus in metus.</p>
           </div>
         </div>
       </div>
@@ -115,108 +116,6 @@
         </div>
       </div>
     </section>
-
-    <div class="hello">
-      <h1>{{ msg }}</h1>
-      <p>
-        For a guide and recipes on how to configure / customize this project,<br />
-        check out the
-        <a href="https://cli.vuejs.org" target="_blank" rel="noopener"
-          >vue-cli documentation</a
-        >.
-      </p>
-      <h3>Installed CLI Plugins</h3>
-      <ul>
-        <li>
-          <a
-            href="https://github.com/vuejs/vue-cli/tree/dev/packages/%40vue/cli-plugin-babel"
-            target="_blank"
-            rel="noopener"
-            >babel</a
-          >
-        </li>
-        <li>
-          <a
-            href="https://github.com/vuejs/vue-cli/tree/dev/packages/%40vue/cli-plugin-eslint"
-            target="_blank"
-            rel="noopener"
-            >eslint</a
-          >
-        </li>
-        <li>
-          <a
-            href="https://github.com/vuejs/vue-cli/tree/dev/packages/%40vue/cli-plugin-unit-jest"
-            target="_blank"
-            rel="noopener"
-            >unit-jest</a
-          >
-        </li>
-        <li>
-          <a
-            href="https://github.com/vuejs/vue-cli/tree/dev/packages/%40vue/cli-plugin-e2e-cypress"
-            target="_blank"
-            rel="noopener"
-            >e2e-cypress</a
-          >
-        </li>
-      </ul>
-      <h3>Essential Links</h3>
-      <ul>
-        <li>
-          <a href="https://vuejs.org" target="_blank" rel="noopener">Core Docs</a>
-        </li>
-        <li>
-          <a href="https://forum.vuejs.org" target="_blank" rel="noopener"
-            >Forum</a
-          >
-        </li>
-        <li>
-          <a href="https://chat.vuejs.org" target="_blank" rel="noopener"
-            >Community Chat</a
-          >
-        </li>
-        <li>
-          <a href="https://twitter.com/vuejs" target="_blank" rel="noopener"
-            >Twitter</a
-          >
-        </li>
-        <li>
-          <a href="https://news.vuejs.org" target="_blank" rel="noopener">News</a>
-        </li>
-      </ul>
-      <h3>Ecosystem</h3>
-      <ul>
-        <li>
-          <a href="https://router.vuejs.org" target="_blank" rel="noopener"
-            >vue-router</a
-          >
-        </li>
-        <li>
-          <a href="https://vuex.vuejs.org" target="_blank" rel="noopener">vuex</a>
-        </li>
-        <li>
-          <a
-            href="https://github.com/vuejs/vue-devtools#vue-devtools"
-            target="_blank"
-            rel="noopener"
-            >vue-devtools</a
-          >
-        </li>
-        <li>
-          <a href="https://vue-loader.vuejs.org" target="_blank" rel="noopener"
-            >vue-loader</a
-          >
-        </li>
-        <li>
-          <a
-            href="https://github.com/vuejs/awesome-vue"
-            target="_blank"
-            rel="noopener"
-            >awesome-vue</a
-          >
-        </li>
-      </ul>
-    </div>
     </div>
   </template>
 
