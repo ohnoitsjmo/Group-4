@@ -42,7 +42,11 @@
                   <i class="fas fa-plus fa-3x"></i>
                 </div>
               </div>
-              <img class="img-fluid" src="img/portfolio/01-thumbnail.jpg" alt="">
+              <v-img
+                contain
+                class="white--text align-end"
+                src="http://3.bp.blogspot.com/_P-Qq1L9TbEI/TDPJckU76oI/AAAAAAAABHc/HFe72o3YBCU/s1600/cello.jpg"
+              />   
             </a>
             <div class="portfolio-caption">
               <h4>Strings</h4>
@@ -55,7 +59,11 @@
                   <i class="fas fa-plus fa-3x"></i>
                 </div>
               </div>
-              <img class="img-fluid" src="img/portfolio/02-thumbnail.jpg" alt="">
+              <v-img
+                contain
+                class="white--text align-end"
+                src="http://www.gemeinhardt.com/media/catalog/product/cache/1/image/9df78eab33525d08d6e5fb8d27136e95/l/g/lg-33ssb_1.jpg"
+              />   
             </a>
             <div class="portfolio-caption">
               <h4>Woodwinds</h4>
@@ -68,7 +76,11 @@
                   <i class="fas fa-plus fa-3x"></i>
                 </div>
               </div>
-              <img class="img-fluid" src="img/portfolio/03-thumbnail.jpg" alt="">
+              <v-img
+                contain
+                class="white--text align-end"
+                src="https://cdn.shoplightspeed.com/shops/612125/files/5088063/650x750x2/image.jpg"
+              />   
             </a>
             <div class="portfolio-caption">
               <h4>Brass</h4>
@@ -81,7 +93,11 @@
                   <i class="fas fa-plus fa-3x"></i>
                 </div>
               </div>
-              <img class="img-fluid" src="img/portfolio/04-thumbnail.jpg" alt="">
+              <v-img
+                contain
+                class="white--text align-end"
+                src="http://used.steinwaypianos.com/wp-content/uploads/2016/10/IMG_4438-1024x768.jpg"
+              />   
             </a>
             <div class="portfolio-caption">
               <h4>Keys</h4>
@@ -94,8 +110,11 @@
                   <i class="fas fa-plus fa-3x"></i>
                 </div>
               </div>
-              <img class="img-fluid" src="img/portfolio/05-thumbnail.jpg" alt="">
-            </a>
+              <v-img
+                contain
+                class="white--text align-end"
+                src="http://cdns3.gear4music.com/media/8/86132/1200/preview.jpg"
+              />            </a>
             <div class="portfolio-caption">
               <h4>Percussion</h4>
             </div>
@@ -107,7 +126,11 @@
                   <i class="fas fa-plus fa-3x"></i>
                 </div>
               </div>
-              <img class="img-fluid" src="img/portfolio/06-thumbnail.jpg" alt="">
+              <v-img
+                contain
+                class="white--text align-end"
+                src="https://www.swstrings.com/image/GP-394?imageSize=4&index=0"
+              />   
             </a>
             <div class="portfolio-caption">
               <h4>Accessories</h4>
