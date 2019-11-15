@@ -26,13 +26,13 @@
       required
     ></v-text-field>
 
-    <v-select
+    <!-- <v-select
       v-model="select"
       :items="items"
       :rules="[v => !!v || 'Item is required']"
       label="Item"
       required
-    ></v-select>
+    ></v-select> -->
 
     <!-- <v-checkbox
       v-model="checkbox"
@@ -124,6 +124,6 @@
 
 <style scoped>
 .v-text-field__slot {
-text-align: right;
+text-align: left;
 }
 </style>
