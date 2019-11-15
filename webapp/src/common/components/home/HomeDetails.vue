@@ -119,7 +119,8 @@
     </div>
   </template>
 
-  </script>
+  <script>
+  export default {
     name: "HomeDetails",
     props: {
       msg: String
