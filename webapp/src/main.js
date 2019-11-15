@@ -13,6 +13,5 @@ Vue.use(Vuetify);
 const store = createStore();
 new Vue({
   router,
-  store,
-  render: h => h(App)
-}).$mount("#app");
+  render: h => h(App),
+}).$mount('#app')

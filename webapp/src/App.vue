@@ -1,46 +1,88 @@
 <template>
   <div id="app">
-    <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/shop">Shop</router-link> |
-	    <router-link to="/profile">Profile</router-link> |
-      <router-link to="/cart">Cart</router-link> | 
-      <router-link to="/login">Login</router-link> |
-      <router-link to="/orders">Orders</router-link>
-       <!-- <v-card-action>
-         <v-flex text-xs-right>
-         <v-btn color= #42b983 absolute :style="{bottom: '65%', right: '0%', transform:'translateX(-10%)'}">
-           Cart
-         </v-btn>
-         </v-flex> 
-       </v-card-action> -->
+    <!-- NAVIGATION -->
+    <router-link to="/"/>
+      <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav" style="background-color: #ff5733 ">
+        <div class="container">
+          <a class="navbar-brand js-scroll-trigger" href="#page-top">SLOJAMS</a>
+          <!-- <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+            Menu
+            <i class="fas fa-bars"></i>
+          </button> -->
+          <div class="collapse navbar-collapse" id="navbarResponsive">
+            <ul class="navbar-nav text-uppercase ml-auto">
+              <ul class="nav-item">
+                <!-- <a class="nav-link js-scroll-trigger" href="ENTER PAGE LINK HERE">Home</a> -->
+                <router-link to="/" class="nav-link js-scroll-trigger">Home</router-link>
+              </ul>
+              <ul class="nav-item">
+                <!-- <a class="nav-link js-scroll-trigger" href="ENTER PAGE LINK HERE">Hot Deals</a> -->
+                <router-link to="/shop" class="nav-link js-scroll-trigger">Hot Deals</router-link>
+              </ul>
+              <ul class="nav-item">
+                <!-- <a class="nav-link js-scroll-trigger" href="ENTER PAGE LINK HERE">Shop</a> -->
+                <router-link to="/shop" class="nav-link js-scroll-trigger">Shop</router-link>
+              </ul>
+              <ul class="nav-item">
+                <!-- <a class="nav-link js-scroll-trigger" href="ENTER PAGE LINK HERE">Cart</a> -->
+                <router-link to="/cart" class="nav-link js-scroll-trigger">Cart</router-link>
+              </ul>
+              <ul class="nav-item">
+                <!-- <a class="nav-link js-scroll-trigger" href="ENTER PAGE LINK HERE">Log In/Sign Up</a> -->
+                <router-link to="/login" class="nav-link js-scroll-trigger">Login</router-link>
+              </ul>
+              <ul class="nav-item">
+                <!-- <a class="nav-link js-scroll-trigger" href="ENTER PAGE LINK HERE">Log In/Sign Up</a> -->
+                <router-link to="/orders" class="nav-link js-scroll-trigger">Orders</router-link>
+              </ul>
+            </ul>
+          </div>
+      </div>
+    </nav>
+    <div style="margin-top:100px"></div>
+    <router-view/>
+    <!-- FOOTER -->
+<footer class="footer" style="margin-top:0px; margin-bottom: 0px; padding: 0px">
+    <div class="container">
+      <div class="row align-items-center">
+        <div class="col-md-4">
+          <span class="text-muted"> (808) 555-5555</span>
+        </div>
+        <div class="col-md-4">
+          <span class="text-muted" style="margin-top: 10px; margin-bottom: 10px"> M-F 8:30AM - 6:00PM<br>
+            1234 Chorro St. San Luis Obispo, CA 93401 </span>
+        </div>
+        <div class="col-md-4">
+          <span class="text-muted"> Email </span>
+        </div>
+      </div>
     </div>
-    <router-view />
+  </footer>
   </div>
 </template>
 
+<script>
+
+export default {
+  name: 'app',
+
+}
+</script>
+
 <style lang="scss">
 @import url('https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap');
+@import './assets/css/styles.css';
 
 $image-path: '~@/../mdb/mdbvue/img';
 @import '~@/../mdb/mdbvue/scss/mdb.scss';
 
 #app {
-  font-family: "Avenir", Helvetica, Arial, sans-serif;
+  font-family: 'Avenir', Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
-}
-#nav {
-  padding: 30px;
-  a {
-    font-weight: bold;
-    color: #2c3e50;
-    &.router-link-exact-active {
-      color: #42b983;
-    }
-  }
+  /* margin-top: 60px; */
 }
 #logo {
   text-align: left;
