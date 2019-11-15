@@ -1,0 +1,124 @@
+{
+    "data": [
+        {
+        "name": "New Clarinet",
+        "image": "https://siterepository.s3.amazonaws.com/5418/clarinet_pic.jpg",
+        "category": "Woodwinds",
+        "remainingInventory": 15,
+        "price": "$180",
+        "info": "Brand-spanking new clarinet!"
+        },
+        {
+        "name": "Flute",
+        "image": "http://www.gemeinhardt.com/media/catalog/product/cache/1/image/9df78eab33525d08d6e5fb8d27136e95/l/g/lg-33ssb_1.jpg",
+        "category": "Woodwinds",
+        "remainingInventory": 11,
+        "price": "$210",
+        "info": "Unused flute"
+        },
+        {
+        "name": "Used Piano",
+        "image": "http://used.steinwaypianos.com/wp-content/uploads/2016/10/IMG_4438-1024x768.jpg",
+        "category": "Keyboards",
+        "remainingInventory": 2,
+        "price": "$650",
+        "info": "Like new piano sold by Archbhishop Desmond Tutu."
+        },
+        {
+        "name": "New Trumpet",
+        "image": "https://cdn.shoplightspeed.com/shops/612125/files/5088063/650x750x2/image.jpg",
+        "category": "Brass",
+        "remainingInventory": 21,
+        "price": "$130",
+        "info": "2011 Dahl-Kirkland trumpet with telescoping quicksight."
+        },
+        {
+        "name": "French horn",
+        "image": "https://www.jimlaabsmusicstore.com/wp-content/uploads/2018/02/FrenchHorn-RoseGoldBell-1.jpg",
+        "category": "Brass",
+        "remainingInventory": 8,
+        "price": "$250",
+        "info": "Used French horn. Please don't buy this."
+        },
+        {
+        "name": "Snare drum",
+        "image": "https://www.moderndrummer.com/wp-content/uploads/popcorn-snare.jpg",
+        "category": "Percussion",
+        "remainingInventory": 20,
+        "price": "$80",
+        "info": "Excellent quality snare drum."
+        },
+        {
+        "name": "Violin",
+        "image": "https://www.cmuse.org/wp-content/uploads/2014/07/Stradivarius-violin.jpg",
+        "category": "Strings",
+        "remainingInventory": 32,
+        "price": "$270",
+        "info": "Not quite stradivarius, but you can barely even tell the difference!"
+        },
+        {
+        "name": "Like-new cello",
+        "image": "http://3.bp.blogspot.com/_P-Qq1L9TbEI/TDPJckU76oI/AAAAAAAABHc/HFe72o3YBCU/s1600/cello.jpg",
+        "category": "Strings",
+        "remainingInventory": 6,
+        "price": "$350",
+        "info": "Like new cellos sold by my ex-wife. Don't support her"
+        },
+        {
+        "name": "New viola",
+        "image": "https://upload.wikimedia.org/wikipedia/commons/1/1e/Viola_d%27amore.jpg",
+        "category": "Strings",
+        "remainingInventory": 5,
+        "price": "$0",
+        "info": "I'll give you violas for free if you throw them away after buying them."
+        },
+        {
+        "name": "Bass",
+        "image": "https://www.bassbags.co.uk/wp-content/uploads/2016/09/Double-Bass-Shop.jpg",
+        "category": "Strings",
+        "remainingInventory": 5,
+        "price": "$400",
+        "info": "These big bois are very good quality."
+        },
+        {
+        "name": "Stradivarius",
+        "image": "https://upload.wikimedia.org/wikipedia/commons/a/ab/Stradivarius_violin_in_the_royal_palace_in_madrid.jpg",
+        "category": "Strings",
+        "remainingInventory": 1,
+        "price": "$2,000,000",
+        "info": "Nobody has bought this yet. I dare you to be the first."
+        },
+        {
+        "name": "Purple velvet violin case",
+        "image": "https://www.swstrings.com/image/GP-394?imageSize=4&index=0",
+        "category": "Accessories",
+        "remainingInventory": 3,
+        "price": "$70",
+        "info": "A great violin case for holding rosin, two bows, and two violins."
+        },
+        {
+        "name": "Tambourine",
+        "image": "http://cdns3.gear4music.com/media/8/86132/1200/preview.jpg",
+        "category": "Percussion",
+        "remainingInventory": 9,
+        "price": "$40",
+        "info": "Cheap quality tambourines."
+        },
+        {
+        "name": "Violin for sale",
+        "image": "https://drunkinamidnightchoir.files.wordpress.com/2014/11/broken-violin.jpg",
+        "category": "Sales",
+        "remainingInventory": 22,
+        "price": "$80",
+        "info": "Great deal on a new violin!"
+        },
+        {
+        "name": "Guitar",
+        "image": "https://c1.zzounds.com/media/productmedia/fit,2018by3200/quality,85/1_Full_Straight_Front_NA-26ef23085931a0b756aa5685355e0b7c.jpg",
+        "category": "Strings",
+        "remainingInventory": 101,
+        "price": "$120",
+        "info": "We have a ton of guitars but it seems everyone already has one."
+        }
+    ]
+}
