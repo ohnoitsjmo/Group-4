@@ -119,6 +119,14 @@
         "remainingInventory": 101,
         "price": "$120",
         "info": "We have a ton of guitars but it seems everyone already has one."
-        }
+        },
+        {
+            "name": "Guitar",
+            "image": "https://c1.zzounds.com/media/productmedia/fit,2018by3200/quality,85/1_Full_Straight_Front_NA-26ef23085931a0b756aa5685355e0b7c.jpg",
+            "category": "Strings",
+            "remainingInventory": 101,
+            "price": "$120",
+            "info": "We have a ton of guitars but it seems everyone already has one."
+            }
     ]
 }

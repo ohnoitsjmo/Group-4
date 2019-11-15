@@ -5,8 +5,8 @@
       <v-row
         >
         <template v-for="item in items">
-          <v-col :key="item.id">
-            <v-card
+          <v-col :key="item.id" v-if="item.category == categoryName.toLowerCase()" style="max-width:300px">
+            <v-card v-if="item.category == categoryName.toLowerCase()"
               class="pa-2"
               outlined
               tile

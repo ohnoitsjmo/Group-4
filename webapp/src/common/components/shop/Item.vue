@@ -1,9 +1,9 @@
 <template>
   <div id="item-name" class="name">
     <v-card
-     
       max-width="300"
     >
+    <v-card-title style="font-size:30px">{{item.name}}</v-card-title>
     <v-img
       contain
       class="white--text align-end"
@@ -11,7 +11,7 @@
       width="300px"
       :src="item.image"
     >
-      <v-card-title>{{item.name}}</v-card-title>
+      
     </v-img>
 
     <v-card-subtitle class="pb-0">Price: {{item.price}}</v-card-subtitle>

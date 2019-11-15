@@ -3,9 +3,10 @@
     <div class="menu">
         <SidebarMenu :menu="menu" 
                      collapsed="collapsed"
-                     @item-click="onCategoryClick"/>
+                     @item-click="onCategoryClick"
+                     style="margin-top:250px; height:auto"/>
     </div>
-    <v-container fluid>
+    <v-container fluid style="margin-left: 100px; margin-top: 150px; padding-right: 50px">
       <v-row>
         <v-col cols="15">
           <v-row align="center">
