@@ -65,7 +65,7 @@ export default {
       e.preventDefault();
     },
     handleClick: function() {
-      var userLevel = this.$store.state.user;
+      var userLevel = this.$store.state.user.userLevel;
       if (userLevel != "admin" || userLevel != "employee") {
         alert("Not authorized to edit");
       } else {
