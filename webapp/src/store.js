@@ -2,6 +2,7 @@
 // store.js
 import Vue from 'vue'
 import Vuex from 'vuex'
+import axios from "axios";
 
 Vue.use(Vuex)
 
@@ -16,10 +17,25 @@ export function createStore () {
     state: () => ({
       items: {
         
-      }
+      },
+      user: {
+        loggedIn: false,
+        userLevel: "user"
+      },
     }),
 
     actions: {
+      login: function({ commit }, payload) {
+        const { email, password } = payload;
+        return axios.post("api/login", { email, password }).then((res) => {
+          if(res.data.success && res.data.success === true){
+            let loggedIn = res.data.success
+            let userLevel = res.data.userLevel
+            userLevel = "admin"
+            commit("login", { loggedIn, userLevel });
+          }
+        });
+      },
       fetchItem({ commit }, id) {
         // return the Promise via `store.dispatch()` so that we know
         // when the data has been fetched
@@ -31,7 +47,11 @@ export function createStore () {
     mutations: {
       setItem (state, { id, item }) {
         Vue.set(state.items, id, item)
-      }
+      },
+      login (state, { loggedIn, userLevel }) {
+        Vue.set(state.user, "loggedIn", loggedIn)
+        Vue.set(state.user, "userLevel", userLevel)
+      },
     }
   })
 }
