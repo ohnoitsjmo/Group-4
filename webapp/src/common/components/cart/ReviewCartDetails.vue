@@ -50,39 +50,23 @@
 </template>
 
 <script>
+  import {CartModel} from "@/store.js";
   export default {
       name: "ReviewCartDetails",
-      data: () => ({
-      vals: ['Foo', 'Bar', 'Fizz', 'Buzz'],
-      itemsPerPageOptions: [4, 8, 12],
-      itemsPerPage: 12,
-      items: [
-        {
-          name: 'Instrument 1',
-          price: 159,
-          shipping: 'available', 
-        },
-        {
-          name: 'Instrument 2',
-          price: 237,
-          shipping: 'pick-up only',
-        },
-        {
-          name: 'Instrument 3',
-          price: 159,
-          shipping: 'available', 
-        },
-        {
-          name: 'Instrument 4',
-          price: 159,
-          shipping: 'available', 
-        },
-        {
-          name: 'Instrument 5',
-          price: 159,
-          shipping: 'available', 
-        },
-      ],
-    }),
+      data () {
+        return {
+          vals: ['Foo', 'Bar', 'Fizz', 'Buzz'],
+          itemsPerPageOptions: [4, 8, 12],
+          itemsPerPage: 12,
+          items: CartModel.getCartItems()
+          // items: [
+          //   {
+          //     name: 'Instrument 1',
+          //     price: 159,
+          //     shipping: 'available', 
+          //   },
+          // ],
+        }
+      }
   }
 </script>

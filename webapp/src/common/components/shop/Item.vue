@@ -3,7 +3,7 @@
     <v-card
       max-width="300"
     >
-    <v-card-title style="font-size:30px">{{item.name}}</v-card-title>
+    <v-card-title style="font-size:30px"><span contentEditable="false" v-on:click="handleClick" @keydown.enter="handleEnter" ref="element1">{{item.name}}</span></v-card-title>
     <v-img
       contain
       class="white--text align-end"
@@ -11,13 +11,15 @@
       width="300px"
       :src="item.image"
     >
-      
+
     </v-img>
 
-    <v-card-subtitle class="pb-0">Price: {{item.price}}</v-card-subtitle>
+    <v-card-subtitle class="pb-0">
+    Price: <span contentEditable="false" v-on:click="handleClick" @keydown.enter="handleEnter" ref="element2">{{item.price}}</span>
+    </v-card-subtitle>
 
     <v-card-text class="text--primary">
-      <div>{{item.remainingInventory}} remaining in stock</div>
+      <span contentEditable="false" v-on:click="handleClick" @keydown.enter="handleEnter" ref="element3">{{item.remainingInventory}}</span> remaining in stock
     </v-card-text>
 
     <v-card-actions>
@@ -51,6 +53,30 @@ export default {
   name: 'Item',
   props: {
     item: Object
+  },
+  methods: {
+    handleEnter: function(e) {
+      var el1 = this.$refs.element1;
+      var el2 = this.$refs.element2;
+      var el3 = this.$refs.element3;
+      el1.contentEditable = "false";
+      el2.contentEditable = "false";
+      el3.contentEditable = "false";
+      e.preventDefault();
+    },
+    handleClick: function() {
+      var userLevel = this.$store.state.user;
+      if (userLevel != "admin" || userLevel != "employee") {
+        alert("Not authorized to edit");
+      } else {
+        var el1 = this.$refs.element1;
+        var el2 = this.$refs.element2;
+        var el3 = this.$refs.element3;
+        el1.contentEditable = "true";
+        el2.contentEditable = "true";
+        el3.contentEditable = "true";
+      }
+    }
   }
 };
 </script>

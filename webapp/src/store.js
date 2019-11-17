@@ -10,6 +10,7 @@ Vue.use(Vuex)
 // and ignore the implementation details
 import { fetchItem } from "./api";
 import ShopDataModel from "@/models/shop/ShopDataModel.js";
+import CartDataModel from "@/models/cart/CartDataModel.js";
 export function createStore () {
   return new Vuex.Store({
     // IMPORTANT: state must be a function so the module can be
@@ -57,3 +58,4 @@ export function createStore () {
 }
 
 export let ShopModel = new ShopDataModel();
+export let CartModel = new CartDataModel();
