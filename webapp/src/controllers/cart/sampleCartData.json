@@ -1,0 +1,28 @@
+{
+    "data": [
+        {
+            "name": "New Clarinet",
+            "image": "https://siterepository.s3.amazonaws.com/5418/clarinet_pic.jpg",
+            "price": "$180",
+            "info": "Brand-spanking new clarinet!",
+            "id": 0,
+            "shipping": "Available"
+        },
+        {
+            "name": "Flute",
+            "image": "https://siterepository.s3.amazonaws.com/5418/clarinet_pic.jpg",
+            "price": "$330",
+            "info": "FLOOOOOOOOOOOT!",
+            "id": 2,
+            "shipping": "Not Available"
+        },
+        {
+            "name": "New Drum Set",
+            "image": "https://siterepository.s3.amazonaws.com/5418/clarinet_pic.jpg",
+            "price": "$500",
+            "info": "New drum set!",
+            "id": 93,
+            "shipping": "Available"
+        }
+    ]
+}
