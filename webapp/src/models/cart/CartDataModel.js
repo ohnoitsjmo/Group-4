@@ -36,6 +36,7 @@ export default class CartDataModel {
                });
         this.count++;
     });
+    console.log("Appended cart data, this is now cart data: ", this.cartItems)
   }
 
   clearCartItems() {
