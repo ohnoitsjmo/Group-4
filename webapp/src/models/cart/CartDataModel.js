@@ -1,3 +1,5 @@
+import { runInThisContext } from "vm";
+
 /* eslint-disable prettier/prettier */
 export default class CartDataModel {
   constructor() {
@@ -37,6 +39,18 @@ export default class CartDataModel {
         this.count++;
     });
     console.log("Appended cart data, this is now cart data: ", this.cartItems)
+  }
+
+  removeItemFromCart(id) {
+    for(var i = 0; i < this.cartItems.length; i++)
+    {
+      if(this.cartItems[i].id == id)
+      {
+        this.cartItems.splice(i, 1);
+        break;
+      }
+    }
+    console.log("Item removed, this is now the cart data: ", this.cartItems);
   }
 
   clearCartItems() {
