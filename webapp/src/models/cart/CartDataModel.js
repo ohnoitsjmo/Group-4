@@ -17,7 +17,8 @@ export default class CartDataModel {
             "name": item.name,
             "image": item.image,            
             price: item.price,
-            shipping: item.shipping
+            shipping: item.shipping,
+            quantity: item.quantity
               });
         this.count++;
     });
@@ -30,7 +31,8 @@ export default class CartDataModel {
             "name": item.name,
             "image": item.image,
             price: item.price,
-            shipping: item.shipping
+            shipping: item.shipping,
+            quantity: item.quantity
                });
         this.count++;
     });
