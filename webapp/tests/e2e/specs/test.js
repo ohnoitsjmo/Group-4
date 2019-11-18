@@ -7,6 +7,42 @@ describe("HomePage Test", () => {
     cy.contains("ABOUT US");
     cy.contains("SHOP BY CATEGORY");
   });
+  it("Strings from home", () => {
+    cy.visit("localhost:8080/");
+    cy.get(':nth-child(1) > .portfolio-link > .v-responsive > .v-responsive__content').click();
+    cy.url().should('include', '/shop');
+    cy.contains("Strings");
+  });
+  it("Woodwinds from home", () => {
+    cy.visit("localhost:8080/");
+    cy.get(':nth-child(2) > .portfolio-link > .v-responsive > .v-responsive__content').click();
+    cy.url().should('include', '/shop');
+    cy.contains("Woodwinds");
+  });
+  it("Brass from home", () => {
+    cy.visit("localhost:8080/");
+    cy.get(':nth-child(3) > .portfolio-link > .v-responsive > .v-responsive__content').click();
+    cy.url().should('include', '/shop');
+    cy.contains("Brass");
+  });
+  it("Keys from home", () => {
+    cy.visit("localhost:8080/");
+    cy.get(':nth-child(4) > .portfolio-link > .v-responsive > .v-responsive__content').click();
+    cy.url().should('include', '/shop');
+    cy.contains("Keyboards");
+  });
+  it("Percussion from home", () => {
+    cy.visit("localhost:8080/");
+    cy.get(':nth-child(5) > .portfolio-link > .v-responsive > .v-responsive__content').click();
+    cy.url().should('include', '/shop');
+    cy.contains("Percussion");
+  });
+  it("Accessories from home", () => {
+    cy.visit("localhost:8080/");
+    cy.get(':nth-child(6) > .portfolio-link > .v-responsive > .v-responsive__content').click();
+    cy.url().should('include', '/shop');
+    cy.contains("Accessories");
+  });
 });
 
 describe("Navigation Bar Test", () => {
@@ -77,6 +113,18 @@ describe("Shop Test", () => {
   });
   it("Shop Dropdown Menu", ()=> {
     cy.get('.vsm--toggle-btn').click();
+    
+  });
+});
+
+describe("Login Test", () => {
+  it("Visits the Login page", () => {
+    cy.visit("localhost:8080/login");
+    cy.contains("Log in");
+  });
+  it("Sign up page", ()=> {
+    cy.get('.justify-content-end > .font-small > .dark-grey-text').click();
+    cy.url().should('include', '/signup');
     
   })
 });
