@@ -11,14 +11,12 @@ Vue.use(Vuex)
 import { fetchItem } from "./api";
 import ShopDataModel from "@/models/shop/ShopDataModel.js";
 import CartDataModel from "@/models/cart/CartDataModel.js";
-export function createStore () {
-  return new Vuex.Store({
+
+export default new Vuex.Store({
     // IMPORTANT: state must be a function so the module can be
     // instantiated multiple times
     state: () => ({
-      items: {
-        
-      },
+      currentCategory: "Woodwinds",
       user: {
         loggedIn: false,
         userLevel: "user"
@@ -45,6 +43,7 @@ export function createStore () {
       fetchItem({ commit }, id) {
         // return the Promise via `store.dispatch()` so that we know
         // when the data has been fetched
+        debugger;
         return fetchItem(id).then(item => {
           commit("setItem", { id, item });
         });
@@ -64,7 +63,5 @@ export function createStore () {
       },
     }
   })
-}
-
 export let ShopModel = new ShopDataModel();
 export let CartModel = new CartDataModel();

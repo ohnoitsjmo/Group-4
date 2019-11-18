@@ -4,7 +4,8 @@
     <router-link to="/"/>
       <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav" style="background-color: #ff5733 ">
         <div class="container">
-          <a class="navbar-brand js-scroll-trigger" href="#page-top">SLOJAMS</a>
+          <a class="navbar-brand js-scroll-trigger">SLOJAMS</a>
+
           <!-- <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
             Menu
             <i class="fas fa-bars"></i>
@@ -13,19 +14,16 @@
           <div class="collapse navbar-collapse" id="navbarResponsive">
             <ul class="navbar-nav text-uppercase ml-auto">
               <ul class="nav-item">
-                <!-- <a class="nav-link js-scroll-trigger" href="ENTER PAGE LINK HERE">Home</a> -->
                 <router-link to="/" class="nav-link js-scroll-trigger">Home</router-link>
               </ul>
               <ul class="nav-item">
-                <!-- <a class="nav-link js-scroll-trigger" href="ENTER PAGE LINK HERE">Hot Deals</a> -->
+                <!-- TODO: hot deals should be linked to sale section -->
                 <router-link to="/shop" class="nav-link js-scroll-trigger">Hot Deals</router-link>
               </ul>
               <ul class="nav-item">
-                <!-- <a class="nav-link js-scroll-trigger" href="ENTER PAGE LINK HERE">Shop</a> -->
                 <router-link to="/shop" class="nav-link js-scroll-trigger">Shop</router-link>
               </ul>
               <ul class="nav-item">
-                <!-- <a class="nav-link js-scroll-trigger" href="ENTER PAGE LINK HERE">Cart</a> -->
                 <router-link to="/cart" class="nav-link js-scroll-trigger">Cart</router-link>
               </ul>
               <ul class="nav-item">
@@ -62,7 +60,7 @@
             1234 Chorro St. San Luis Obispo, CA 93401 </span>
         </div>
         <div class="col-md-4">
-          <span class="text-muted"> Email </span>
+          <span class="text-muted"> slojams@gmail.com </span>
         </div>
       </div>
     </div>

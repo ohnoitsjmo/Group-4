@@ -38,12 +38,16 @@ export default {
   data() {
     return {
       items: ShopModel.getShopItems(),
-      currentClicked: "Woodwinds",
+      currentClicked: this.getCategory(),
       menu: [
       {
           header: true,
           title: 'Select a Category',
           hiddenOnCollapse: true
+      },
+      {
+          title: 'Strings',
+          icon: 'fa fa-guitar '
       },
       {
           // href: '/',
@@ -56,17 +60,14 @@ export default {
           icon: 'fa fa-trash'
       },
       {
-          title: 'Keyboards',
+          title: 'Keys',
           icon: 'fa fa-ruler-horizontal'
       },
       {
           title: 'Percussion',
           icon: 'fa fa-drum'
       },
-      {
-          title: 'Strings',
-          icon: 'fa fa-guitar '
-      },
+      
       {
           title: 'Accessories',
           icon: 'fa fa-shekel-sign'
@@ -85,7 +86,15 @@ export default {
       console.log("Just clicked ", item.title);
       this.currentClicked = item.title;
       console.log(this.currentClicked);
+    },
+    getCategory() {
+      // debugger;
+      console.log("current category:",  this.$store.state.currentCategory)
+      return this.$store.state.currentCategory;
     }
+  },
+  beforeMount() {
+    this.currentClicked = this.getCategory();
   }
 };
 </script>
