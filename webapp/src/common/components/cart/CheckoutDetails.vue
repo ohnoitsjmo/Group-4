@@ -10,24 +10,22 @@
         </tr>
       </thead>
       <tbody>
-        <tr v-for="item in desserts" :key="item.name">
-          <td>{{ item.name }}</td>
-          <td>{{ item.quantity }}</td>
-          <td>{{ item.category }}</td>
-          <td>${{ item.price }}</td>
+        <tr v-for="item in instruments" :key="item.name">
+          <td class="text-left">{{ item.name }}</td>
+          <td class="text-left">{{ item.quantity }}</td>
+          <td class="text-left">{{ item.category }}</td>
+          <td class="text-left">${{ item.price }}</td>
         </tr>
       </tbody>
-      <thead>
         <tr>
-          <th class="text-left">Total</th>
-          <th class="text-left"></th>
-          <th class="text-left"></th>
-          <th class="text-left">$3100</th>
+          <td class="text-left">Total</td>
+          <td class="text-left"></td>
+          <td class="text-left"></td>
+          <!-- calculate total -->
+          <td class="text-left">$3100</td>
         </tr>
-      </thead>
     </template>
   </v-simple-table>
-
 </template>
 
 <script>
@@ -36,7 +34,7 @@ import {ShopModel} from '@/store.js';
     name: 'CheckoutDetails',
     data () {
       return {
-        desserts: [
+        instruments: [
           {
             name: 'Guitar',
             quantity: 1,
@@ -53,5 +51,8 @@ import {ShopModel} from '@/store.js';
         items: ShopModel.getShopItems(),
       }
     },
+    methods (){
+      getTotal
+    }
   }
 </script>

@@ -1,7 +1,7 @@
     <template>
       <div class="profile">
-        <header>
-          <body style="display:block; text-align:left;">Welcome Back, Sandra</body>
+        <header style='margin-top: 127px'>
+          <body style="font-size: 30px; display:block; text-align:left; color: #ff5733;">Welcome Back, Sandra</body>
         </header>
         <v-card>
     <v-navigation-drawer
@@ -93,7 +93,7 @@
     form {
       margin-bottom: 2rem;
     }
-    header {
+    .header {
     padding: 10px;
     text-align: right;
     background: #eee;

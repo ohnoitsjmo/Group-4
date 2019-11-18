@@ -25,7 +25,7 @@
               <v-list dense>
                 <v-list-item>
                   <v-list-item-content>Price:</v-list-item-content>
-                  <v-list-item-content class="align-end">{{ item.price }}</v-list-item-content>
+                  <v-list-item-content class="align-end">${{ item.price }}</v-list-item-content>
                 </v-list-item>
                 <v-list-item>
                   <v-list-item-content>Shipping:</v-list-item-content>
@@ -34,10 +34,10 @@
                 <v-list-item>
                   <v-list-item-content>Quantity:</v-list-item-content>
                   <v-list-item-content>
-                   <select style = "background-color: #F5F7FA; border: 1px solid #dddddd; align-content:center;">
-                     <option value="all" selected="selected">1</option>
-                     <option value="all" >2</option>
-                     <option value="all" >3</option>
+                   <select size = "sm" style = "background-color: #F5F7FA; border: 1px solid #dddddd; align-content:center;">
+                     <option style= 'align-content =center;' value="all" selected="selected">1</option>
+                     <option class="text-center" value="all" >2</option>
+                     <option class="text-center" value="all" >3</option>
                    </select>
                   </v-list-item-content>
                 </v-list-item>

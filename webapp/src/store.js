@@ -37,3 +37,4 @@ export function createStore () {
 }
 
 export let ShopModel = new ShopDataModel();
+//export let LoginModel = new LoginModel();

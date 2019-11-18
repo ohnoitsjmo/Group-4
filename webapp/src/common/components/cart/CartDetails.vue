@@ -66,10 +66,37 @@
           class="scroll"
           color="white"
           height="250px"
+          style="margin-bottom: -120px;"
         >
 
         <CheckoutDetails/>
         </v-card>
+        <v-card style="margin-left:1px;">
+          <v-col
+        class="text-center"
+        cols="12"
+      >
+        Name: <strong>Vuetify</strong>
+      </v-col>
+       <v-col
+           class="text-center"
+           cols="12"
+        >Address: <strong> Address</strong>
+        </v-col>
+        <v-col
+           class="text-center"
+           cols="12"
+        >Card: <strong> ****-****-****-1234</strong>
+        </v-col>
+        <!-- <v-text-field dense
+          v-model="label"
+          label="Address"
+        ></v-text-field>
+        <v-text-field dense
+          v-model="label"
+          label="Card Number"
+        ></v-text-field> -->
+      </v-card>
 
         <v-btn
           color= #42b983
@@ -122,7 +149,7 @@
     padding: 10px;
     text-align: left;
     background: #eee;
-    color: #42b983;
+    color: #ff5733;
     font-size: 30px;
     }
 
