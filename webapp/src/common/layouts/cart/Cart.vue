@@ -13,7 +13,7 @@ export default {
         CartDetails
     },
     beforeMount() {
-        fetchCartItems();
+        // fetchCartItems();
     }
 }
 </script>

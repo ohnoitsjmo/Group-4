@@ -19,7 +19,7 @@
             <v-card>
               <v-card-title><h4>{{ item.name }}</h4></v-card-title>
               <v-flex class="text-xs-right">
-                  <v-btn absolute top right small color= "#E53935">Remove</v-btn>
+                  <v-btn @click="removeItemFromCart(item)" absolute top right small color= "#E53935">Remove</v-btn>
                   </v-flex>
               <v-divider></v-divider>
               <v-list dense>
@@ -34,10 +34,7 @@
                 <v-list-item>
                   <v-list-item-content>Quantity:</v-list-item-content>
                   <v-list-item-content>
-                   <v-select
-                    :items="vals"
-                    label="Label"
-                   ></v-select>
+        
                   </v-list-item-content>
                 </v-list-item>
               </v-list>
@@ -55,7 +52,6 @@
       name: "ReviewCartDetails",
       data () {
         return {
-          vals: ['Foo', 'Bar', 'Fizz', 'Buzz'],
           itemsPerPageOptions: [4, 8, 12],
           itemsPerPage: 12,
           items: CartModel.getCartItems()
@@ -66,6 +62,14 @@
           //     shipping: 'available', 
           //   },
           // ],
+        }
+      },
+      methods: {
+        removeItemFromCart(item) {
+          CartModel.removeItemFromCart(item.id);
+          if(CartModel.getCartItems().length == 0){
+            this.$router.push("/")
+        }
         }
       }
   }

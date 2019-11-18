@@ -40,6 +40,7 @@
        <v-btn
         color="orange"
         text
+        @click="addItemToCart(item)"
       >
         Add to Cart
       </v-btn>
@@ -49,12 +50,24 @@
 </template>
 
 <script>
+import {CartModel} from "@/store.js";
 export default {
   name: 'Item',
   props: {
     item: Object
   },
   methods: {
+    addItemToCart(item)
+    {
+      CartModel.appendCartItems([{
+        quantity: 1,
+        name: item.name,
+        image: item.image,
+        shipping: "Default",
+        id: item.id,
+        price: item.price
+      }]);
+     },
     handleEnter: function(e) {
       var el1 = this.$refs.element1;
       var el2 = this.$refs.element2;
