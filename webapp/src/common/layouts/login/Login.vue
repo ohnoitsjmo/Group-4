@@ -52,8 +52,6 @@
     methods: {
       login: function() {
         this.error = false;
-        console.log(this.email)
-        console.log(this.password)
         this.$store
           .dispatch("login", { email: this.email, password: this.password })
           .then(

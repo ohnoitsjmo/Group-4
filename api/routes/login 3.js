@@ -10,7 +10,7 @@ export default (passport) => {
       if (!user) {
         return res.status('400').send({ user, msg: 'Cannot log in', info });
       }
-      return req.login(user, () => res.send({ user, success: true }));
+      return req.login(user, () => res.send({ success: true }));
     })(req, res, next);
   });
   router.get('/logout', (req, res) => {

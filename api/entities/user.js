@@ -6,25 +6,25 @@ export default class User {
   @PrimaryGeneratedColumn()
   id
 
-  @Column ({ type: 'varchar', unique: true })
+  @Column ({ type: 'varchar', unique: false })
   first
 
-  @Column ({ type: 'varchar', unique: true })
+  @Column ({ type: 'varchar', unique: false })
   last
 
-  @Column({ type: 'varchar', unique: true })
+  @Column({ type: 'varchar', unique: false })
   email
 
   @Column({ type: 'varchar', nullable: false })
   password
 
-  @Column({ type: 'varchar', unique: true })
+  @Column({ type: 'varchar', unique: false })
   creditcard
   
-  @Column({ type: 'varchar', unique: true })
+  @Column({ type: 'varchar', unique: false })
   address
 
-  @Column({ type: "enum", enum: ["Admin", "Employee", "Customer"], default: "Customer"})
+  @Column({ type: "varchar", unique: false })
   role
 
   @OneToMany(() => Order, (order) => order.user,{eager:true})
