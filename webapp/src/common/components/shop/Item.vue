@@ -14,12 +14,12 @@
 
     </v-img>
 
-    <v-card-subtitle class="pb-0">
-    Price: <span contentEditable="false" v-on:click="handleClick" @keydown.enter="handleEnter" ref="element2">{{item.price}}</span>
+    <v-card-subtitle class="pb-0" style="margin-bottom:5px;">
+    Price: <span style="border:1px solid grey; border-radius:7px; padding:5px;" contentEditable="false" v-on:click="handleClick" @keydown.enter="handleEnter" ref="element2">{{item.price}}</span>
     </v-card-subtitle>
 
     <v-card-text class="text--primary">
-      <span contentEditable="false" v-on:click="handleClick" @keydown.enter="handleEnter" ref="element3">{{item.remainingInventory}}</span> remaining in stock
+      <span style="border:1px solid grey; border-radius:7px; padding:5px;" contentEditable="false" v-on:click="handleClick" @keydown.enter="handleEnter" ref="element3">{{item.remainingInventory}}</span> remaining in stock
     </v-card-text>
 
     <v-card-actions>
@@ -40,6 +40,7 @@
        <v-btn
         color="orange"
         text
+        @click="addItemToCart(item)"
       >
         Add to Cart
       </v-btn>
@@ -49,12 +50,24 @@
 </template>
 
 <script>
+import {CartModel} from "@/store.js";
 export default {
   name: 'Item',
   props: {
     item: Object
   },
   methods: {
+    addItemToCart(item)
+    {
+      CartModel.appendCartItems([{
+        quantity: 1,
+        name: item.name,
+        image: item.image,
+        shipping: "Default",
+        id: item.id,
+        price: item.price
+      }]);
+     },
     handleEnter: function(e) {
       var el1 = this.$refs.element1;
       var el2 = this.$refs.element2;

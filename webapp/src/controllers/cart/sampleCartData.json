@@ -6,7 +6,8 @@
             "price": "$180",
             "info": "Brand-spanking new clarinet!",
             "id": 0,
-            "shipping": "Available"
+            "shipping": "Available",
+            "quantity": "3"
         },
         {
             "name": "Flute",
@@ -14,7 +15,9 @@
             "price": "$330",
             "info": "FLOOOOOOOOOOOT!",
             "id": 2,
-            "shipping": "Not Available"
+            "shipping": "Not Available",
+            "quantity": "1"
+
         },
         {
             "name": "New Drum Set",
@@ -22,7 +25,9 @@
             "price": "$500",
             "info": "New drum set!",
             "id": 93,
-            "shipping": "Available"
+            "shipping": "Available",
+            "quantity": "2"
+
         }
     ]
 }
