@@ -29,11 +29,17 @@ export function createStore () {
       login: function({ commit }, payload) {
         const { email, password } = payload;
         return axios.post("api/login", { email, password }).then((res) => {
+          console.log(res)
           if(res.data.success && res.data.success === true){
             let loggedIn = res.data.success
-            let userLevel = res.user.role
+            let userLevel = res.data.user.role
             commit("login", { loggedIn, userLevel });
           }
+        });
+      },
+      logout: function({ commit }) {
+        return axios.get("/api/logout").then(() => {
+          commit("logout");
         });
       },
       fetchItem({ commit }, id) {
@@ -51,6 +57,10 @@ export function createStore () {
       login (state, { loggedIn, userLevel }) {
         Vue.set(state.user, "loggedIn", loggedIn)
         Vue.set(state.user, "userLevel", userLevel)
+      },
+      logout: function(state){
+        Vue.set(state.user, "loggedIn", false)
+        Vue.set(state.user, "userLevel", "Customer")
       },
     }
   })

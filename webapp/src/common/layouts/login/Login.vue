@@ -61,7 +61,7 @@
               console.log(this.$store.state.user.userLevel)
               this.$router.push("/")
             },
-            () => {
+            (err) => {
               this.error = true;
             }
           );
