@@ -4,7 +4,7 @@ import "mdbvue/lib/mdbvue.css";
 import Vue from "vue";
 import App from "./App.vue";
 import router from "./router";
-import { createStore } from "./store";
+import store from "./store";
 import Vuetify from "vuetify";
 import "vuetify/dist/vuetify.min.css";
 import vSelect from 'vue-select'
@@ -13,7 +13,6 @@ Vue.component('v-select', vSelect)
 
 Vue.config.productionTip = false;
 Vue.use(Vuetify);
-const store = createStore();
 new Vue({
   router,
   store,
