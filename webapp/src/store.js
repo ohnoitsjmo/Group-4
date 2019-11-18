@@ -31,8 +31,7 @@ export function createStore () {
         return axios.post("api/login", { email, password }).then((res) => {
           if(res.data.success && res.data.success === true){
             let loggedIn = res.data.success
-            let userLevel = res.data.userLevel
-            userLevel = "admin"
+            let userLevel = res.user.role
             commit("login", { loggedIn, userLevel });
           }
         });
