@@ -11,6 +11,7 @@
         <v-col cols="15">
           <v-row align="center">
             <div class="please">
+              <button v-on:click="checkItems()"> AISUDHOASIUDH </button>
               <ShopListings :categoryName="currentClicked"
                             :items="items"/>
             </div>
@@ -91,6 +92,10 @@ export default {
       // debugger;
       console.log("current category:",  this.$store.state.currentCategory)
       return this.$store.state.currentCategory;
+    },
+    checkItems() {
+      this.items = ShopModel.getShopItems()
+      console.log(this.items)
     }
   },
   beforeMount() {

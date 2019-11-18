@@ -14,12 +14,12 @@ export default {
     ShopDetails
   },
   methods: {
-    fetchNewShopData() {
-      fetchShopItems();
+    async fetchNewShopData() {
+      await fetchShopItems();
     }
   },
-  beforeMount() {
+  created() {
     this.fetchNewShopData();
-  },
+  }
 };
 </script>

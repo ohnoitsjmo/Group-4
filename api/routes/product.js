@@ -12,9 +12,9 @@ router.route('/product')
     })
   })
   .post((req, res) => {
-    const { name, stock, description, price, deliveryOption, saleStatus} = req.body;
+    const { name, image, stock, description, price, deliveryOption, saleStatus} = req.body;
     const manager = getManager();
-    const product = manager.create(Product, { name, stock, description, price, deliveryOption, saleStatus});
+    const product = manager.create(Product, { name, image,  stock, description, price, deliveryOption, saleStatus});
     manager.save(product).then((savedProduct) => {
       res.send(savedProduct);
     });

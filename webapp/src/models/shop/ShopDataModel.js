@@ -23,6 +23,8 @@ export default class ShopDataModel {
         });
         this.count++;
     });
+    console.log(this.shopItems.length)
+    console.log(this.shopItems)
   }
 
   appendShopItems(data) {
