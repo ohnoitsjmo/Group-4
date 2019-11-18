@@ -63,7 +63,7 @@
 
       <v-stepper-content step="3">
         <v-card
-          class="mb-12"
+          class="scroll"
           color="white"
           height="250px"
         >

@@ -34,10 +34,11 @@
                 <v-list-item>
                   <v-list-item-content>Quantity:</v-list-item-content>
                   <v-list-item-content>
-                   <v-select
-                    :items="vals"
-                    label="Label"
-                   ></v-select>
+                   <select style = "background-color: #F5F7FA; border: 1px solid #dddddd; align-content:center;">
+                     <option value="all" selected="selected">1</option>
+                     <option value="all" >2</option>
+                     <option value="all" >3</option>
+                   </select>
                   </v-list-item-content>
                 </v-list-item>
               </v-list>
@@ -53,7 +54,6 @@
   export default {
       name: "ReviewCartDetails",
       data: () => ({
-      vals: ['Foo', 'Bar', 'Fizz', 'Buzz'],
       itemsPerPageOptions: [4, 8, 12],
       itemsPerPage: 12,
       items: [
@@ -86,3 +86,8 @@
     }),
   }
 </script>
+
+<style scoped>
+.v-select__selections {
+     width: 5px}
+</style>

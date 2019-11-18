@@ -1,0 +1,59 @@
+{
+    "data": [
+        {
+            "id": 1,
+            "first": "John",
+            "last": "Doe",
+            "email": "jdoe@calpoly.edu",
+            "password": "jpassword1",
+            "creditcard": 1234567890123456,
+            "address": "123 Main St",
+            "role": "Customer",
+            "order": 111
+        },
+        {
+            "id": 2,
+            "first": "Jane",
+            "last": "Doe",
+            "email": "janedoe@calpoly.edu",
+            "password": "jpassword1",
+            "creditcard": 2234567890123456,
+            "address": "123 Main St",
+            "role": "Customer",
+            "order": 112
+        },
+        {
+            "id": 3,
+            "first": "Jim",
+            "last": "Jones",
+            "email": "jones@calpoly.edu",
+            "password": "jonespassword1",
+            "creditcard": 3234567890123456,
+            "address": "123 Oak St",
+            "role": "Customer",
+            "order": 113
+        },
+        {
+            "id": 4,
+            "first": "Jack",
+            "last": "Daniels",
+            "email": "jdaniels@calpoly.edu",
+            "password": "jackpassword1",
+            "creditcard": 4234567890123456,
+            "address": "123 Titanic St",
+            "role": "Customer",
+            "order": 114
+        },
+        {
+            "id": 5,
+            "first": "Jill",
+            "last": "Daniels",
+            "email": "jilld@calpoly.edu",
+            "password": "jillpassword1",
+            "creditcard": 5234567890123456,
+            "address": "123 Titanic St",
+            "role": "Customer",
+            "order": 115
+        }
+    ]
+}
