@@ -5,6 +5,12 @@
       <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav" style="background-color: #ff5733 ">
         <div class="container">
           <a class="navbar-brand js-scroll-trigger">SLOJAMS</a>
+
+          <!-- <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+            Menu
+            <i class="fas fa-bars"></i>
+          </button> -->
+          <div> {{this.$store.state.user.loggedIn}}   {{this.$store.state.user.userLevel}} </div>
           <div class="collapse navbar-collapse" id="navbarResponsive">
             <ul class="navbar-nav text-uppercase ml-auto">
               <ul class="nav-item">

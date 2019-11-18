@@ -105,6 +105,7 @@
           </div>
           <div class="col-md-4 col-sm-6 portfolio-item">
             <a class="portfolio-link" data-toggle="modal" v-on:click = "saveCategory('Percussion')">
+
               <div class="portfolio-hover">
                 <div class="portfolio-hover-content">
                   <i class="fas fa-plus fa-3x"></i>
