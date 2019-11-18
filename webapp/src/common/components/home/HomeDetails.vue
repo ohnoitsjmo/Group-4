@@ -36,7 +36,7 @@
         </div>
         <div class="row">
           <div class="col-md-4 col-sm-6 portfolio-item">
-            <a class="portfolio-link" data-toggle="modal" href="#portfolioModal1">
+            <a class="portfolio-link" data-toggle="modal" v-on:click = "saveCategory('Strings')">
               <div class="portfolio-hover">
                 <div class="portfolio-hover-content">
                   <i class="fas fa-plus fa-3x"></i>
@@ -53,7 +53,7 @@
             </div>
           </div>
           <div class="col-md-4 col-sm-6 portfolio-item">
-            <a class="portfolio-link" data-toggle="modal" href="#portfolioModal2">
+            <a class="portfolio-link" data-toggle="modal" v-on:click = "saveCategory('Woodwinds')">
               <div class="portfolio-hover">
                 <div class="portfolio-hover-content">
                   <i class="fas fa-plus fa-3x"></i>
@@ -70,7 +70,7 @@
             </div>
           </div>
           <div class="col-md-4 col-sm-6 portfolio-item">
-            <a class="portfolio-link" data-toggle="modal" href="#portfolioModal3">
+            <a class="portfolio-link" data-toggle="modal" v-on:click = "saveCategory('Brass')">
               <div class="portfolio-hover">
                 <div class="portfolio-hover-content">
                   <i class="fas fa-plus fa-3x"></i>
@@ -87,7 +87,7 @@
             </div>
           </div>
           <div class="col-md-4 col-sm-6 portfolio-item">
-            <a class="portfolio-link" data-toggle="modal" href="#portfolioModal4">
+            <a class="portfolio-link" data-toggle="modal" v-on:click = "saveCategory('Keys')">
               <div class="portfolio-hover">
                 <div class="portfolio-hover-content">
                   <i class="fas fa-plus fa-3x"></i>
@@ -104,7 +104,7 @@
             </div>
           </div>
           <div class="col-md-4 col-sm-6 portfolio-item">
-            <a class="portfolio-link" data-toggle="modal" href="#portfolioModal5">
+            <a class="portfolio-link" data-toggle="modal" v-on:click = "saveCategory('Percussion')">
               <div class="portfolio-hover">
                 <div class="portfolio-hover-content">
                   <i class="fas fa-plus fa-3x"></i>
@@ -114,13 +114,14 @@
                 contain
                 class="white--text align-end"
                 src="http://cdns3.gear4music.com/media/8/86132/1200/preview.jpg"
-              />            </a>
+              />            
+            </a>
             <div class="portfolio-caption">
               <h4>Percussion</h4>
             </div>
           </div>
           <div class="col-md-4 col-sm-6 portfolio-item">
-            <a class="portfolio-link" data-toggle="modal" href="#portfolioModal6">
+            <a class="portfolio-link" data-toggle="modal" v-on:click = "saveCategory('Accessories')">
               <div class="portfolio-hover">
                 <div class="portfolio-hover-content">
                   <i class="fas fa-plus fa-3x"></i>
@@ -147,8 +148,21 @@
     name: "HomeDetails",
     props: {
       msg: String
+    },
+    methods: {
+      saveCategory(category) {
+        debugger
+        //this.$store.saveCategory(category);
+        // this.$store.currentCategory = this.category
+        // this.$store.mutations.setCurrentCategory(category);
+        this.$store.state.currentCategory = category;
+        console.log("category", category)
+        this.$router.push('/shop');
+        console.log(this.category);
+      }
     }
   };
+
   </script>
 
   <!-- Add "scoped" attribute to limit CSS to this component only -->
