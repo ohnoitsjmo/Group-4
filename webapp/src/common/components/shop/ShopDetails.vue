@@ -57,7 +57,7 @@ export default {
       {
           // href: '/',
           title: 'Brass',
-          icon: 'fa fa-trash'
+          icon: 'fa fa-bell'
       },
       {
           title: 'Keys',
@@ -70,11 +70,11 @@ export default {
       
       {
           title: 'Accessories',
-          icon: 'fa fa-shekel-sign'
+          icon: 'fa fa-music'
       },
       {
           title: 'Sales',
-          icon: 'fa fa-bookmark'
+          icon: 'fa fa-dollar-sign'
       }
       ],
       
