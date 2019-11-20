@@ -11,7 +11,6 @@
         <v-col cols="15">
           <v-row align="center">
             <div class="please">
-              <button v-on:click="checkItems()"> AISUDHOASIUDH </button>
               <ShopListings :categoryName="currentClicked"
                             :items="items"/>
             </div>
@@ -27,6 +26,7 @@ import { SidebarMenu } from 'vue-sidebar-menu'
 import 'vue-sidebar-menu/dist/vue-sidebar-menu.css'
 import  ShopListings from '@/common/components/shop/ShopListings.vue';
 import {ShopModel} from '@/store.js';
+import {fetchShopItems} from "@/controllers/shop/ShopController.js";
 export default {
   name: "ShopDetails",
   components: {
@@ -92,10 +92,6 @@ export default {
       // debugger;
       console.log("current category:",  this.$store.state.currentCategory)
       return this.$store.state.currentCategory;
-    },
-    checkItems() {
-      this.items = ShopModel.getShopItems()
-      console.log(this.items)
     }
   },
   beforeMount() {

@@ -5,12 +5,12 @@ import Product from '../entities/product';
 
 const router = Router();
 router.route('/product')
-  .all(isAuthenticated)
   .get((req, res) => {
     getRepository(Product).find().then(foundProducts => {
       res.send(foundProducts);
     })
   })
+  .all(isAuthenticated)
   .post((req, res) => {
     const { name, image, stock, description, price, deliveryOption, saleStatus} = req.body;
     const manager = getManager();
