@@ -73,7 +73,7 @@ export default {
           icon: 'fa fa-shekel-sign'
       },
       {
-          title: 'Sales',
+          title: 'Hot Deals',
           icon: 'fa fa-bookmark'
       }
       ],

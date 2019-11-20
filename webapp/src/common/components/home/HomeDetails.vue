@@ -5,11 +5,57 @@
     <header class="masthead">
       <div class="container">
         <div class="intro-text">
-          <div class="intro-lead-in">Announcements</div>
-          <!-- <div class="intro-heading text-uppercase">It's Nice To Meet You</div> -->
-          <!-- <a class="btn btn-primary btn-xl text-uppercase js-scroll-trigger" href="#services">Tell Me More</a> -->
-            <p class=" " style="margin-left:200px; margin-right: 200px; font-size: 40px">Lorem ipsum dolor sit amet!</p>
-        </div>
+          <div class="intro-lead-in">ANNOUNCEMENTS</div>
+            <p>
+            <v-card
+              color="rgb(255, 255, 255, 0.8)"
+              class="mx-auto"
+            >
+              <v-card-text>
+                <div>SALE OF THE DAY</div>
+                <p class="display-1 text--primary">
+                  20% OFF all accessories
+                </p>
+              </v-card-text>
+              <v-card-actions>
+                <v-btn
+                  text
+                  v-on:click = "saveCategory('Hot Deals')"
+                >
+                  SHOP NOW
+                </v-btn>
+              </v-card-actions>
+            </v-card>
+            </p>
+            <v-card
+              color="rgb(255, 255, 255, 0.8)"
+              class="mx-auto"
+            >
+              <v-card-text>
+                <div>FLASH SALE</div>
+                <p class="display-1 text--primary">
+                  50% OFF mouthpieces
+                </p>
+              </v-card-text>
+              <v-card-actions>
+                <v-btn
+                  text
+                  v-on:click = "saveCategory('Hot Deals')"
+                >
+                  SHOP NOW
+                </v-btn>
+              </v-card-actions>
+            </v-card>
+          </div>
+          <div class="text-center">
+            <v-pagination
+              v-model="page"
+              :length="4"
+              circle
+              prev-icon="mdi-menu-left"
+              next-icon="mdi-menu-right"
+              ></v-pagination>
+          </div>
       </div>
     </header>
 
@@ -145,23 +191,12 @@
   </template>
 
   <script>
+  import  PostedAnnouncements from '@/common/components/home/PostedAnnouncements.vue';
   export default {
     name: "HomeDetails",
     props: {
       msg: String
     },
-    methods: {
-      saveCategory(category) {
-        debugger
-        //this.$store.saveCategory(category);
-        // this.$store.currentCategory = this.category
-        // this.$store.mutations.setCurrentCategory(category);
-        this.$store.state.currentCategory = category;
-        console.log("category", category)
-        this.$router.push('/shop');
-        console.log(this.category);
-      }
-    }
   };
 
   </script>
