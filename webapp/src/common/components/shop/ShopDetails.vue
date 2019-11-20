@@ -74,7 +74,7 @@ export default {
           icon: 'fa fa-music'
       },
       {
-          title: 'Sales',
+          title: 'Hot Deals',
           icon: 'fa fa-dollar-sign'
       }
       ],
