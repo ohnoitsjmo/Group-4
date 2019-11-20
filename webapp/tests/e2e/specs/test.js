@@ -29,7 +29,7 @@ describe("HomePage Test", () => {
     cy.visit("localhost:8080/");
     cy.get(':nth-child(4) > .portfolio-link > .v-responsive > .v-responsive__content').click();
     cy.url().should('include', '/shop');
-    cy.contains("Keyboards");
+    cy.contains("Keys");
   });
   it("Percussion from home", () => {
     cy.visit("localhost:8080/");
@@ -66,7 +66,7 @@ describe("Navigation Bar Test", () => {
     cy.contains("Cart Review & Checkout");
   });
   it("Login by Navigation Bar", () => {
-    cy.get(':nth-child(5) > .nav-link').click();
+    cy.get(':nth-child(7) > .nav-link').click();
     cy.url().should('include', '/login');
     cy.contains("Log in");
   });
@@ -83,25 +83,25 @@ describe("Shop Test", () => {
     cy.visit("localhost:8080/shop");
     cy.contains("Woodwinds");
   });
-  it("Shop Navigation Bar Woodwind", () => {
+  it("Shop Navigation Bar Strings", () => {
     cy.get(':nth-child(1) > .vsm--link > .vsm--icon').click();
+    cy.contains("Strings");
+  });
+  it("Shop Navigation Bar Woodwinds", () => {
+    cy.get(':nth-child(2) > .vsm--link > .vsm--icon').click();
     cy.contains("Woodwinds");
   });
   it("Shop Navigation Bar Brass", () => {
-    cy.get(':nth-child(2) > .vsm--link > .vsm--icon').click();
+    cy.get(':nth-child(3) > .vsm--link > .vsm--icon').click();
     cy.contains("Brass");
   });
-  it("Shop Navigation Bar Keyboards", () => {
-    cy.get(':nth-child(3) > .vsm--link > .vsm--icon').click();
-    cy.contains("Keyboards");
+  it("Shop Navigation Bar Keys", () => {
+    cy.get(':nth-child(4) > .vsm--link > .vsm--icon').click();
+    cy.contains("Keys");
   });
   it("Shop Navigation Bar Percussion", () => {
-    cy.get(':nth-child(4) > .vsm--link > .vsm--icon').click();
-    cy.contains("Percussion");
-  });
-  it("Shop Navigation Bar Strings", () => {
     cy.get(':nth-child(5) > .vsm--link > .vsm--icon').click();
-    cy.contains("Strings");
+    cy.contains("Percussion");
   });
   it("Shop Navigation Bar Accessories", () => {
     cy.get(':nth-child(6) > .vsm--link > .vsm--icon').click();

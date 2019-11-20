@@ -26,6 +26,7 @@ import { SidebarMenu } from 'vue-sidebar-menu'
 import 'vue-sidebar-menu/dist/vue-sidebar-menu.css'
 import  ShopListings from '@/common/components/shop/ShopListings.vue';
 import {ShopModel} from '@/store.js';
+import {fetchShopItems} from "@/controllers/shop/ShopController.js";
 export default {
   name: "ShopDetails",
   components: {
@@ -57,7 +58,7 @@ export default {
       {
           // href: '/',
           title: 'Brass',
-          icon: 'fa fa-trash'
+          icon: 'fa fa-bell'
       },
       {
           title: 'Keys',
@@ -70,11 +71,11 @@ export default {
       
       {
           title: 'Accessories',
-          icon: 'fa fa-shekel-sign'
+          icon: 'fa fa-music'
       },
       {
           title: 'Hot Deals',
-          icon: 'fa fa-bookmark'
+          icon: 'fa fa-dollar-sign'
       }
       ],
       
