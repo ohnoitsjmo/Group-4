@@ -9,6 +9,9 @@ export default class Product {
   @Column({ type: 'varchar', unique: false })
   name
 
+  @Column({ type: 'varchar', unique: false })
+  image
+
   @Column({ type: 'int', unique: false })
   stock
 

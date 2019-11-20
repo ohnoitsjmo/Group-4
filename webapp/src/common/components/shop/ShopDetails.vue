@@ -26,6 +26,7 @@ import { SidebarMenu } from 'vue-sidebar-menu'
 import 'vue-sidebar-menu/dist/vue-sidebar-menu.css'
 import  ShopListings from '@/common/components/shop/ShopListings.vue';
 import {ShopModel} from '@/store.js';
+import {fetchShopItems} from "@/controllers/shop/ShopController.js";
 export default {
   name: "ShopDetails",
   components: {
