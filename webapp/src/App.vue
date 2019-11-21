@@ -32,7 +32,7 @@
               </ul>
               <ul class="nav-item">
                 <!-- <a class="nav-link js-scroll-trigger" href="ENTER PAGE LINK HERE">Log In/Sign Up</a> -->
-                <router-link to="/orders" class="nav-link js-scroll-trigger" v-if="this.$store.state.user.userLevel == 'Admin'">Employees</router-link>
+                <router-link to="/employees" class="nav-link js-scroll-trigger" v-if="this.$store.state.user.userLevel == 'Admin'">Employees</router-link>
               </ul>
               <ul class="nav-item">
                 <!-- <a class="nav-link js-scroll-trigger" href="ENTER PAGE LINK HERE">Log In/Sign Up</a> -->
