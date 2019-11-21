@@ -1,27 +1,31 @@
     <template>
-      <div class="profile">
+      <div class="profile" >
         <header style='margin-top: 127px'>
-          <body style="font-size: 30px; display:block; text-align:left; color: #ff5733;">Welcome Back, Sandra</body>
+          <body style="font-size: 30px; display:block; text-align:left; color: #ff5733;">Welcome Back, Sandra Adams</body>
         </header>
-        <v-card>
+        <UserDetails/>
+        
+         <p style="position: absolute;margin-left: 90px;">asdf<UserDetails2/></p>
+        <v-card style="display: inline;">
     <v-navigation-drawer
       expand-on-hover
       permanent
     >
       <template v-slot:prepend>
         <v-list>
-          <v-list-item>
+          <!-- <v-list-item>
             <v-list-item-avatar>
               <v-img src="https://randomuser.me/api/portraits/women/85.jpg"></v-img>
             </v-list-item-avatar>
-          </v-list-item>
+          </v-list-item> -->
 
           <v-list-item
             link
             two-line
+            style="margin-bottom:150px"
           >
             <v-list-item-content>
-              <v-list-item-title class="title">Sandra Adams</v-list-item-title>
+              <v-list-item-title class="title">S.A.</v-list-item-title>
               <v-list-item-subtitle>sandra_a88@gmail.com</v-list-item-subtitle>
             </v-list-item-content>
             <v-list-item-action>
@@ -31,53 +35,46 @@
         </v-list>
       </template>
 
-      <v-divider></v-divider>
+      <!-- <v-divider ></v-divider> -->
 
-      <v-list
+      <!-- <v-list
         nav
         dense
       >
-        <v-list-item link>
+        <v-list-item link @click="routeToHome">
           <v-list-item-icon>
-            <v-icon>mdi-folder</v-icon>
+            <v-icon>mdi-home</v-icon>
           </v-list-item-icon>
-          <v-list-item-title>Account Home</v-list-item-title>
+          <v-list-item-title>HomePage</v-list-item-title>
+        </v-list-item>
+        <v-list-item link @click="routeToOrders">
+          <v-list-item-icon>
+            <v-icon>mdi-basket</v-icon>
+          </v-list-item-icon>
+          <v-list-item-title>Orders</v-list-item-title>
         </v-list-item>
         <v-list-item link>
           <v-list-item-icon>
-            <v-icon>mdi-account-multiple</v-icon>
-          </v-list-item-icon>
-          <v-list-item-title>Purchases</v-list-item-title>
-        </v-list-item>
-        <v-list-item link>
-          <v-list-item-icon>
-            <v-icon>mdi-star</v-icon>
-          </v-list-item-icon>
-          <v-list-item-title>Track Order</v-list-item-title>
-        </v-list-item>
-        <v-list-item link>
-          <v-list-item-icon>
-            <v-icon>mdi-star</v-icon>
+            <v-icon>mdi-settings-outline</v-icon>
           </v-list-item-icon>
           <v-list-item-title>Account Settings</v-list-item-title>
         </v-list-item>
-      </v-list>
+      </v-list> -->
     </v-navigation-drawer>
-    <v-content>
-      Menu
-    </v-content>
+   
   </v-card>
-  <v-content>
-    <v-title>
-      Menu
-    </v-title>
-    </v-content>
       </div> 
   </template>
 
   <script>
+    import UserDetails from "@/common/components/profile/UserDetails.vue";
+    import UserDetails2 from "@/common/components/profile/UserDetails2.vue";
     export default {
       name: 'ProfileDetails',
+      components: {
+      UserDetails,
+      UserDetails2,
+      },
       data() {
         return {
           username: {
@@ -86,6 +83,14 @@
           },
         }
       },
+      methods: {
+        routeToHome () {
+          this.$router.push('/');
+        },
+        routeToOrders () {
+          this.$router.push('/orders');
+        }
+      }
     }
   </script>
 
@@ -151,28 +156,3 @@
     color: white;
   }
   </style>
-
-
-  // <column>
-  //       <ul>
-  //         <a onclick='document.getElementById("customers").innerHTML = "Acount Home!"'>Account Home</a>
-  //         <a onclick='document.getElementById("customers").innerHTML =  document.getElementById("customers").classList'>Purchases</a>
-  //         <a onclick='document.getElementById("customers").innerHTML = "Track Order!"'>Track Order</a>
-  //         <a onclick='document.getElementById("customers").innerHTML = "Acount Settings!"'>Account Settings</a>
-  //       </ul>
-  //       </column>
-  //       <body id="body">
-  //       <table id="customers">
-  //         <tr>
-  //           <th>Order#</th>
-  //           <th>Status</th>
-  //           <th>Total</th>
-  //         </tr>
-  //         <tr>
-  //          <td>001</td>
-  //          <td>Delivered</td>
-  //           <td>$200</td>
-  //         </tr>
-  //       </table>
-  //       </body>
-  //     </div>
