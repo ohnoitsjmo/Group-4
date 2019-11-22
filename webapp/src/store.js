@@ -11,11 +11,15 @@ Vue.use(Vuex)
 import { fetchItem } from "./api";
 import ShopDataModel from "@/models/shop/ShopDataModel.js";
 import CartDataModel from "@/models/cart/CartDataModel.js";
+import AnnouncementDataModel from './models/home/AnnouncementDataModel';
 
 export default new Vuex.Store({
     // IMPORTANT: state must be a function so the module can be
     // instantiated multiple times
     state: () => ({
+      announcements: {
+
+      },
       currentCategory: "Woodwinds",
       user: {
         loggedIn: false,
@@ -47,11 +51,22 @@ export default new Vuex.Store({
         return fetchItem(id).then(item => {
           commit("setItem", { id, item });
         });
+      },
+      fetchAnnouncements({ commit }, id) {
+        // return the Promise via `store.dispatch()` so that we know
+        // when the data has been fetched
+        debugger;
+        return fetchAnnouncements(id).then(announcement => {
+          commit("setAnnouncements", { id, announcement });
+        });
       }
     },
     mutations: {
       setItem (state, { id, item }) {
         Vue.set(state.items, id, item)
+      },
+      setAnnouncements (state, { id, item }) {
+        Vue.set(state.announcements, id, announcement)
       },
       login (state, { loggedIn, userLevel }) {
         Vue.set(state.user, "loggedIn", loggedIn)
@@ -65,3 +80,4 @@ export default new Vuex.Store({
   })
 export let ShopModel = new ShopDataModel();
 export let CartModel = new CartDataModel();
+export let AnnouncementModel = new AnnouncementDataModel();

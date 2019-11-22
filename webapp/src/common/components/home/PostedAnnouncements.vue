@@ -1,5 +1,5 @@
 <template>
-  <div id="announcement" class="announcement-name">
+  <div id="announcement">
     <v-container fluid>
       <v-row
         >
@@ -10,7 +10,7 @@
               outlined
               tile
             >
-              <Item :announcement="announcement"/>
+              <Announcement :announcement="announcement"/>
             </v-card>
           </v-col>
         </template>
