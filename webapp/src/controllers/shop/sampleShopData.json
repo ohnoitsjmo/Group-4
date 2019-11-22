@@ -19,7 +19,7 @@
         {
         "name": "Used Piano",
         "image": "http://used.steinwaypianos.com/wp-content/uploads/2016/10/IMG_4438-1024x768.jpg",
-        "category": "Keyboards",
+        "category": "Keys",
         "remainingInventory": 2,
         "price": "$650",
         "info": "Like new piano sold by Archbhishop Desmond Tutu."
@@ -107,7 +107,7 @@
         {
         "name": "Violin for sale",
         "image": "https://drunkinamidnightchoir.files.wordpress.com/2014/11/broken-violin.jpg",
-        "category": "Sales",
+        "category": "Hot Deals",
         "remainingInventory": 22,
         "price": "$80",
         "info": "Great deal on a new violin!"

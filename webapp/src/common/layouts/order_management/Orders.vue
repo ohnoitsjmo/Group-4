@@ -5,16 +5,42 @@
             :data="data"
             striped
             bordered
+            v-bind:key="this.loading"
         />
     </div>
 </template>
 
 <script>
   import { mdbDatatable } from 'mdbvue';
+  import {fetchOrders} from "@/controllers/order_management/OrdersController.js";
   export default {
     name: 'DatatablePage',
     components: {
       mdbDatatable
+    },
+    created() {
+      this.fetchOrders();
+    },
+    methods: {
+      async fetchOrders() {
+        this.loading = true
+        let orders = await fetchOrders();
+        let i = 0;
+        for(var order in orders){
+          this.data.rows.push(
+            {
+              id: orders[order].id,
+              status: orders[order].status,
+              item: ['test object 1', 'test object 2', 't3', 't4', 't5', 't1234'][i%6],//orders[order].item.join("\n"),
+              quantity: i+1 % 11,
+              price: orders[order].price
+            }
+          )
+          i++;
+        }
+        console.log(this.data.rows)
+        this.loading = false;
+      }
     },
     data() {
       return {
@@ -46,85 +72,7 @@
               sort: 'asc'
             }
           ],
-          rows: [
-            {
-              id: '1',
-              status: 'Shipping',
-              item: 'Sponge',
-              quantity: '2',
-              price: '$112'
-            },
-            {
-              id: '2',
-              status: 'Shipping',
-              item: 'Desk',
-              quantity: '1',
-              price: '$14'
-            },
-            {
-              id: '3',
-              status: 'Delivered',
-              item: 'Arrow',
-              quantity: '2',
-              price: '$52'
-            },
-            {
-              id: '4',
-              status: 'Shipping',
-              item: 'Pencil',
-              quantity: '3',
-              price: '$24'
-            },
-            {
-              id: '5',
-              status: 'Delivered',
-              item: 'Keyboard',
-              quantity: '1',
-              price: '$32'
-            },
-            {
-              id: '6',
-              status: 'Shipped',
-              item: 'Eraser',
-              quantity: '2',
-              price: '$12'
-            },
-            {
-              id: '7',
-              status: 'Delivered',
-              item: 'Dog',
-              quantity: '4',
-              price: '$42'
-            },
-            {
-              id: '8',
-              status: 'Shipping',
-              item: 'Laptop',
-              quantity: '1',
-              price: '$52'
-            },
-            {
-              id: '9',
-              status: 'Shipping',
-              item: 'Hat',
-              quantity: '3',
-              price: '$112'
-            },
-            {
-              id: '10',
-              status: 'Delivered',
-              item: 'Watch',
-              quantity: '4',
-              price: '$112'
-            },
-            {
-              id: '11',
-              status: 'Delivered',
-              item: 'Phone',
-              quantity: '10',
-              price: '$1102'
-            }
-          ]
+          rows: []
         }
       }
     }

@@ -4,36 +4,43 @@
     <router-link to="/"/>
       <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav" style="background-color: #ff5733 ">
         <div class="container">
-          <a class="navbar-brand js-scroll-trigger" href="#page-top">SLOJAMS</a>
+          <a class="navbar-brand js-scroll-trigger" href="/">SLOJAMS</a>
+
           <!-- <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
             Menu
             <i class="fas fa-bars"></i>
           </button> -->
+          <div> {{this.$store.state.user.userLevel}} </div>
           <div class="collapse navbar-collapse" id="navbarResponsive">
             <ul class="navbar-nav text-uppercase ml-auto">
               <ul class="nav-item">
-                <!-- <a class="nav-link js-scroll-trigger" href="ENTER PAGE LINK HERE">Home</a> -->
                 <router-link to="/" class="nav-link js-scroll-trigger">Home</router-link>
               </ul>
               <ul class="nav-item">
-                <!-- <a class="nav-link js-scroll-trigger" href="ENTER PAGE LINK HERE">Hot Deals</a> -->
+                <!-- TODO: hot deals should be linked to sale section -->
                 <router-link to="/shop" class="nav-link js-scroll-trigger">Hot Deals</router-link>
               </ul>
               <ul class="nav-item">
-                <!-- <a class="nav-link js-scroll-trigger" href="ENTER PAGE LINK HERE">Shop</a> -->
                 <router-link to="/shop" class="nav-link js-scroll-trigger">Shop</router-link>
               </ul>
               <ul class="nav-item">
-                <!-- <a class="nav-link js-scroll-trigger" href="ENTER PAGE LINK HERE">Cart</a> -->
                 <router-link to="/cart" class="nav-link js-scroll-trigger">Cart</router-link>
               </ul>
               <ul class="nav-item">
                 <!-- <a class="nav-link js-scroll-trigger" href="ENTER PAGE LINK HERE">Log In/Sign Up</a> -->
-                <router-link to="/login" class="nav-link js-scroll-trigger">Login</router-link>
+                <router-link to="/orders" class="nav-link js-scroll-trigger" v-if="this.$store.state.user.userLevel == 'Admin' || this.$store.state.user.userLevel == 'Employee'">Orders</router-link>
               </ul>
               <ul class="nav-item">
                 <!-- <a class="nav-link js-scroll-trigger" href="ENTER PAGE LINK HERE">Log In/Sign Up</a> -->
-                <router-link to="/orders" class="nav-link js-scroll-trigger">Orders</router-link>
+                <router-link to="/employees" class="nav-link js-scroll-trigger" v-if="this.$store.state.user.userLevel == 'Admin'">Employees</router-link>
+              </ul>
+              <ul class="nav-item">
+                <!-- <a class="nav-link js-scroll-trigger" href="ENTER PAGE LINK HERE">Log In/Sign Up</a> -->
+                <router-link to="/login" class="nav-link js-scroll-trigger" v-if="!this.$store.state.user.loggedIn">Login</router-link>
+              </ul>
+              <ul class="nav-item">
+                <!-- <a class="nav-link js-scroll-trigger" href="ENTER PAGE LINK HERE">Log In/Sign Up</a> -->
+                <div v-on:click="logout"  class="nav-link js-scroll-trigger" v-if="this.$store.state.user.loggedIn">Logout</div>
               </ul>
               <ul class="nav-item">
                 <!-- <a class="nav-link js-scroll-trigger" href="ENTER PAGE LINK HERE">Log In/Sign Up</a> -->
@@ -57,7 +64,7 @@
             1234 Chorro St. San Luis Obispo, CA 93401 </span>
         </div>
         <div class="col-md-4">
-          <span class="text-muted"> Email </span>
+          <span class="text-muted"> slojams@gmail.com </span>
         </div>
       </div>
     </div>
@@ -69,7 +76,13 @@
 
 export default {
   name: 'app',
-
+  methods: {
+    logout: function() {
+      this.$store.dispatch("logout").then(() => {
+        return this.$router.push("/");
+      });
+    }
+  }
 }
 </script>
 

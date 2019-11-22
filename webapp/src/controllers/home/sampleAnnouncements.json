@@ -1,0 +1,19 @@
+{
+    "data": [
+        {
+        "title": "SALE OF THE DAY",
+        "announcement": "20% off all accessories",
+        "category": "Hot Deals"
+        },
+        {
+        "title": "BOGO",
+        "announcement": "50% off mouthpieces",
+        "category": "Hot Deals"
+        },
+        {
+        "title": "FLASH SALE",
+        "announcement": "buy one get one reeds",
+        "category": "Hot Deals"
+        }
+    ]
+}

@@ -26,6 +26,7 @@ import { SidebarMenu } from 'vue-sidebar-menu'
 import 'vue-sidebar-menu/dist/vue-sidebar-menu.css'
 import  ShopListings from '@/common/components/shop/ShopListings.vue';
 import {ShopModel} from '@/store.js';
+import {fetchShopItems} from "@/controllers/shop/ShopController.js";
 export default {
   name: "ShopDetails",
   components: {
@@ -38,12 +39,16 @@ export default {
   data() {
     return {
       items: ShopModel.getShopItems(),
-      currentClicked: "Woodwinds",
+      currentClicked: this.getCategory(),
       menu: [
       {
           header: true,
           title: 'Select a Category',
           hiddenOnCollapse: true
+      },
+      {
+          title: 'Strings',
+          icon: 'fa fa-guitar '
       },
       {
           // href: '/',
@@ -53,27 +58,24 @@ export default {
       {
           // href: '/',
           title: 'Brass',
-          icon: 'fa fa-trash'
+          icon: 'fa fa-bell'
       },
       {
-          title: 'Keyboards',
+          title: 'Keys',
           icon: 'fa fa-ruler-horizontal'
       },
       {
           title: 'Percussion',
           icon: 'fa fa-drum'
       },
-      {
-          title: 'Strings',
-          icon: 'fa fa-guitar '
-      },
+      
       {
           title: 'Accessories',
-          icon: 'fa fa-shekel-sign'
+          icon: 'fa fa-music'
       },
       {
-          title: 'Sales',
-          icon: 'fa fa-bookmark'
+          title: 'Hot Deals',
+          icon: 'fa fa-dollar-sign'
       }
       ],
       
@@ -85,7 +87,15 @@ export default {
       console.log("Just clicked ", item.title);
       this.currentClicked = item.title;
       console.log(this.currentClicked);
+    },
+    getCategory() {
+      // debugger;
+      console.log("current category:",  this.$store.state.currentCategory)
+      return this.$store.state.currentCategory;
     }
+  },
+  beforeMount() {
+    this.currentClicked = this.getCategory();
   }
 };
 </script>

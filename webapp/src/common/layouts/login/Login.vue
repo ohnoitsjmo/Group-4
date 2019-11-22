@@ -9,13 +9,13 @@
               </mdb-row>
             </div>
             <mdb-card-body class="mx-4 mt-4">
-              <mdb-input label="Your email" type="text"/>
-              <mdb-input label="Your password" type="password" containerClass="mb-0"/>
+              <mdb-input label="Your email" type="text" v-model="email"/>
+              <mdb-input label="Your password" type="password" containerClass="mb-0" v-model="password"/>
               <p class="font-small grey-text d-flex justify-content-end">Forgot <a href="#" class="dark-grey-text ml-1 font-weight-bold"> Password?</a></p>
               <mdb-row class="d-flex align-items-center mb-4 mt-5">
                 <mdb-col md="5" class="d-flex align-items-start">
                   <div class="text-center">
-                    <router-link to="/"><mdb-btn color="grey" rounded type="button" class="z-depth-1a">Log in</mdb-btn></router-link>
+                    <mdb-btn color="grey" rounded type="button" class="z-depth-1a" v-on:click="login">Log in</mdb-btn>
                   </div>
                 </mdb-col>
                 <mdb-col md="7" class="d-flex justify-content-end">
@@ -41,6 +41,37 @@
       mdbInput,
       mdbBtn,
       mdbIcon
+    },
+    data: function() {
+      return {
+        email: "",
+        password: "",
+        error: false
+      };
+    },
+    methods: {
+      login: function() {
+        this.error = false;
+        this.$store
+          .dispatch("login", { email: this.email, password: this.password })
+          .then(
+            () => {
+              console.log("Logged in!")
+              console.log(this.$store.state.user.loggedIn)
+              console.log(this.$store.state.user.userLevel)
+              this.$router.push("/")
+            },
+            (err) => {
+              this.error = true;
+            }
+          );
+      },
+      checklogin: function() {
+        console.log(this.$store.state.user)
+      },
+      close: function() {
+        this.$emit("close");
+      }
     }
   }
 </script>

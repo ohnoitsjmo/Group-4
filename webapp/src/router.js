@@ -3,6 +3,7 @@ import Router from "vue-router";
 import Login from "./common/layouts/login/Login.vue";
 import Signup from "./common/layouts/signup/Signup.vue";
 import Orders from "./common/layouts/order_management/Orders.vue";
+import Employees from "./common/layouts/employee_management/Employees.vue";
 import Home from "./common/layouts/home/Home.vue";
 import Shop from "./common/layouts/shop/Shop.vue";
 import Cart from "./common/layouts/cart/Cart.vue";
@@ -57,6 +58,11 @@ export default new Router({
       path: "/orders",
       name: "orders",
       component: Orders
+    },
+    {
+      path: "/employees",
+      name: "employees",
+      component: Employees
     }
   ]
 });

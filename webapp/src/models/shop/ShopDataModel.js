@@ -1,3 +1,5 @@
+import axios from "axios";
+
 /* eslint-disable prettier/prettier */
 export default class ShopDataModel {
   constructor() {
@@ -6,6 +8,17 @@ export default class ShopDataModel {
   }
 
   getShopItems() {
+    return this.shopItems;
+  }
+
+  async populateShopItems() {
+    let response = await axios.get('api/product')
+    for(let i = 0; i < response.data.length; i++){
+      response.data[i].info = response.data[i].description
+      response.data[i].remainingInventory = response.data[i].stock
+      response.data[i].category = ['Woodwinds','Strings','Brass','Keys','Percussion','Accessories','Sales'][i % 7]
+    }
+    this.setShopItems(response.data);
     return this.shopItems;
   }
 
@@ -23,6 +36,8 @@ export default class ShopDataModel {
         });
         this.count++;
     });
+    console.log(this.shopItems.length)
+    console.log(this.shopItems)
   }
 
   appendShopItems(data) {

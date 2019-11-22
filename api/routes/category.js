@@ -8,7 +8,7 @@ const router = Router();
 router.route('/category')
   .all(isAuthenticated)
   .get((req, res) => {
-    getRepository(Category).find().then(foundCategories => {
+    getRepository(Category).find( { relations: ["products"] } ).then(foundCategories => {
       res.send(foundCategories);
     })
   })

@@ -9,6 +9,6 @@ export default class Category {
   @Column({ type: 'varchar', unique: false })
   name
 
-  //@ManyToMany(type => Product, product => product.categories)
-  //products
+  @ManyToMany(type => Product, product => product.categories)
+  products
 }
