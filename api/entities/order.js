@@ -17,7 +17,6 @@ export default class Order {
   @ManyToOne(type => User, user => user.orders)
   user
 
-  @ManyToMany(type => Product)
-  @JoinTable()
+  @ManyToMany(type => Product, product => product.orders)
   products
 }

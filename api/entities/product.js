@@ -1,5 +1,7 @@
 import {Entity, PrimaryGeneratedColumn, Column, ManyToMany, JoinTable} from "typeorm"
 import Category from '../entities/category'
+import Order from '../entities/order'
+
 
 @Entity()
 export default class Product {
@@ -30,4 +32,8 @@ export default class Product {
   @ManyToMany(type => Category, category => category.products)
   @JoinTable()
   categories
+
+  @ManyToMany(type => Order, order => order.products)
+  @JoinTable()
+  orders
 }

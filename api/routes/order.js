@@ -8,13 +8,13 @@ const router = Router();
 router.route('/order')
   .all(isAuthenticated)
   .get((req, res) => {
-    getRepository(Order).find().then(foundOrders => {
-      for(let i = 0; i < foundOrders.length; i++){
-        foundOrders[i].user = {
-          "id": req.user.id,
-          "email": req.user.email
-        }
-      }
+    getRepository(Order).find( { relations: ["products"] }).then(foundOrders => {
+      //for(let i = 0; i < foundOrders.length; i++){
+      //  foundOrders[i].user = {
+      //    "id": req.user.id,
+      //    "email": req.user.email
+      //  }
+      //}
       res.send(foundOrders);
     })
   })
