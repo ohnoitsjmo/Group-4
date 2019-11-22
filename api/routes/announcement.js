@@ -6,13 +6,12 @@ import Announcement from '../entities/announcement';
 
 const router = Router();
 router.route('/announcement')
-  .all(isAuthenticated)
   .get((req, res) => {
     getRepository(Announcement).find().then(foundAnnouncements => {
       res.send(foundAnnouncements);
     })
   })
-  
+  .all(isAuthenticated)
   .post((req, res) => {
     const { text } = req.body;
     const manager = getManager();
