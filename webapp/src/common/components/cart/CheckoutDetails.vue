@@ -1,106 +1,58 @@
 <template>
-  <v-data-table dense :headers="headers" :items="desserts" item-key="name" class="elevation-1"></v-data-table>
+  <v-simple-table dense>
+    <template v-slot:default>
+      <thead>
+        <tr>
+          <th class="text-left">Item</th>
+          <th class="text-left">Quantity</th>
+          <th class="text-left">Category</th>
+          <th class="text-left">Price</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr v-for="item in instruments" :key="item.name">
+          <td class="text-left">{{ item.name }}</td>
+          <td class="text-left">{{ item.quantity }}</td>
+          <td class="text-left">{{ item.category }}</td>
+          <td class="text-left">${{ item.price }}</td>
+        </tr>
+      </tbody>
+        <tr>
+          <td class="text-left">Total</td>
+          <td class="text-left"></td>
+          <td class="text-left"></td>
+          <!-- calculate total -->
+          <td class="text-left">$3100</td>
+        </tr>
+    </template>
+  </v-simple-table>
 </template>
 
 <script>
+import {ShopModel} from '@/store.js';
   export default {
-      name: 'CheckoutDetails',
-    data: () => ({
-      desserts: [
-        {
-          name: 'Frozen Yogurt',
-          calories: 159,
-          fat: 6.0,
-          carbs: 24,
-          protein: 4.0,
-          iron: '1%',
-        },
-        {
-          name: 'Ice cream sandwich',
-          calories: 237,
-          fat: 9.0,
-          carbs: 37,
-          protein: 4.3,
-          iron: '1%',
-        },
-        {
-          name: 'Eclair',
-          calories: 262,
-          fat: 16.0,
-          carbs: 23,
-          protein: 6.0,
-          iron: '7%',
-        },
-        {
-          name: 'Cupcake',
-          calories: 305,
-          fat: 3.7,
-          carbs: 67,
-          protein: 4.3,
-          iron: '8%',
-        },
-        {
-          name: 'Gingerbread',
-          calories: 356,
-          fat: 16.0,
-          carbs: 49,
-          protein: 3.9,
-          iron: '16%',
-        },
-        {
-          name: 'Jelly bean',
-          calories: 375,
-          fat: 0.0,
-          carbs: 94,
-          protein: 0.0,
-          iron: '0%',
-        },
-        {
-          name: 'Lollipop',
-          calories: 392,
-          fat: 0.2,
-          carbs: 98,
-          protein: 0,
-          iron: '2%',
-        },
-        {
-          name: 'Honeycomb',
-          calories: 408,
-          fat: 3.2,
-          carbs: 87,
-          protein: 6.5,
-          iron: '45%',
-        },
-        {
-          name: 'Donut',
-          calories: 452,
-          fat: 25.0,
-          carbs: 51,
-          protein: 4.9,
-          iron: '22%',
-        },
-        {
-          name: 'KitKat',
-          calories: 518,
-          fat: 26.0,
-          carbs: 65,
-          protein: 7,
-          iron: '6%',
-        },
-      ],
-      headers: [
-        {
-          text: 'Dessert (100g serving)',
-          align: 'left',
-          sortable: false,
-          value: 'name',
-        },
-        { text: 'Calories', value: 'calories' },
-        { text: 'Fat (g)', value: 'fat' },
-        { text: 'Carbs (g)', value: 'carbs' },
-        { text: 'Protein (g)', value: 'protein' },
-        { text: 'Iron (%)', value: 'iron' },
-      ],
-    }),
+    name: 'CheckoutDetails',
+    data () {
+      return {
+        instruments: [
+          {
+            name: 'Guitar',
+            quantity: 1,
+            category: "category",
+            price: 100,
+          },
+          {
+            name: 'Piano',
+            quantity: 1,
+            category: "category",
+            price: 3000,
+          },
+        ],
+        items: ShopModel.getShopItems(),
+      }
+    },
+    methods (){
+      getTotal
+    }
   }
 </script>

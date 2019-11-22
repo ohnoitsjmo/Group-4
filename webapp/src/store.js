@@ -78,6 +78,7 @@ export default new Vuex.Store({
       },
     }
   })
+}
 export let ShopModel = new ShopDataModel();
 export let CartModel = new CartDataModel();
 export let AnnouncementModel = new AnnouncementDataModel();

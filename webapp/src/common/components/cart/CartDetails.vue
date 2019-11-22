@@ -11,9 +11,9 @@
 
       <v-stepper-step :complete="e1 > 2" step="2">Payment</v-stepper-step>
 
-      <v-divider></v-divider>
+      <!-- <v-divider></v-divider>
 
-      <v-stepper-step step="3">Checkout</v-stepper-step>
+      <v-stepper-step step="3">Checkout</v-stepper-step> -->
     </v-stepper-header>
 
     <v-stepper-items>
@@ -51,7 +51,7 @@
           color= #42b983
           @click="e1 = 3"
         >
-          Continue
+          Place Orders
         </v-btn>
         <spacer></spacer>
         <v-btn 
@@ -63,13 +63,72 @@
 
       <v-stepper-content step="3">
         <v-card
-          class="mb-12"
+          class="scroll"
           color="white"
           height="250px"
+          style="margin-bottom: -120px;"
+        >
+         <v-card style="margin-left:1px;">
+          <v-col
+        class="text-center"
+        cols="12"
+      >
+        <strong>Order Placed</strong>
+      </v-col>
+       <v-col
+           class="text-center"
+           cols="12"
+        >Thank you for shopping with us
+        </v-col>
+        
+      </v-card>
+        </v-card>
+       
+
+        <v-btn
+          color= #42b983
+          @click="routeToHome"
+        >
+          HomePage
+        </v-btn>
+      </v-stepper-content>
+
+      <!-- <v-stepper-content step="3">
+        <v-card
+          class="scroll"
+          color="white"
+          height="250px"
+          style="margin-bottom: -120px;"
         >
 
         <CheckoutDetails/>
         </v-card>
+        <v-card style="margin-left:1px;">
+          <v-col
+        class="text-center"
+        cols="12"
+      >
+        Name: <strong>Vuetify</strong>
+      </v-col>
+       <v-col
+           class="text-center"
+           cols="12"
+        >Address: <strong> Address</strong>
+        </v-col>
+        <v-col
+           class="text-center"
+           cols="12"
+        >Card: <strong> ****-****-****-1234</strong>
+        </v-col>
+        <!-- <v-text-field dense
+          v-model="label"
+          label="Address"
+        ></v-text-field>
+        <v-text-field dense
+          v-model="label"
+          label="Card Number"
+        ></v-text-field> -->
+     <!-- </v-card>
 
         <v-btn
           color= #42b983
@@ -84,7 +143,7 @@
         >
         Cancel
         </v-btn>
-      </v-stepper-content>
+      </v-stepper-content> -->
     </v-stepper-items>
   </v-stepper>
       </div>
@@ -111,6 +170,11 @@
           e1: 0,
         }
       },
+      methods: {
+        routeToHome () {
+          this.$router.push('/');
+        }
+      }
     }
   </script>
 
@@ -122,7 +186,7 @@
     padding: 10px;
     text-align: left;
     background: #eee;
-    color: #42b983;
+    color: #ff5733;
     font-size: 30px;
     }
 
