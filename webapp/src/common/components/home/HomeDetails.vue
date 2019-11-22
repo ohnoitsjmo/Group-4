@@ -5,47 +5,7 @@
       <div class="container">
         <div class="intro-text">
           <div class="intro-lead-in">ANNOUNCEMENTS</div>
-            <!-- <PostedAnnouncements :announcements="announcements"/> -->
-            <p>
-            <v-card
-              color="rgb(255, 255, 255, 0.8)"
-              class="mx-auto"
-            >
-              <v-card-text>
-                <div>SALE OF THE DAY</div>
-                <p class="display-1 text--primary">
-                  20% OFF all accessories
-                </p>
-              </v-card-text>
-              <v-card-actions>
-                <v-btn
-                  text
-                  v-on:click = "saveCategory('Hot Deals')"
-                >
-                  SHOP NOW
-                </v-btn>
-              </v-card-actions>
-            </v-card>
-            </p>
-            <v-card
-              color="rgb(255, 255, 255, 0.8)"
-              class="mx-auto"
-            >
-              <v-card-text>
-                <div>FLASH SALE</div>
-                <p class="display-1 text--primary">
-                  50% OFF mouthpieces
-                </p>
-              </v-card-text>
-              <v-card-actions>
-                <v-btn
-                  text
-                  v-on:click = "saveCategory('Hot Deals')"
-                >
-                  SHOP NOW
-                </v-btn>
-              </v-card-actions>
-            </v-card>
+            <PostedAnnouncements :announcements="announcements" v-bind:key="this.loading"/>
           </div> 
           <!-- <div class="text-center">
             <v-pagination
@@ -193,6 +153,7 @@
   <script>
   import PostedAnnouncements from '@/common/components/home/PostedAnnouncements.vue';
   import {AnnouncementModel} from '@/store.js'
+  import {fetchAnnouncements} from "@/controllers/home/AnnouncementController.js";
   export default {
     name: "HomeDetails",
     components: {
@@ -203,8 +164,12 @@
 
     data() {
       return {
+        loading: false,
         announcements: AnnouncementModel.getAnnouncements()
       }
+    },
+    created(){
+      this.fetchAnnouncements();
     },
 
     methods: {	
@@ -213,7 +178,19 @@
         console.log("category", category)	
         this.$router.push('/shop');	
         console.log(this.category);	
-      }	
+      }	,
+      async fetchAnnouncements() {
+        this.loading = true;
+        this.announcements = await fetchAnnouncements();
+        let i = 0;
+        for(var announcement in this.announcements){
+          this.announcements[announcement].announce = this.announcements[announcement].text
+          this.announcements[announcement].name = ['sales','buy our stuff'][i]
+          this.announcements[announcement].category = 'woodwinds'
+          i++
+        }
+        this.loading = false;
+      }
     }
   };
   </script>

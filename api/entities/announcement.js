@@ -10,4 +10,10 @@ export default class Announcement {
 
   @Column({ type: 'datetime', unique: false, default: () => "CURRENT_TIMESTAMP"})
   time
+
+  @Column({ type: 'varchar', unique: false })
+  title
+
+  @Column({ type: 'varchar', unique: false })
+  category
 }

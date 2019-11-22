@@ -31,7 +31,7 @@
             {
               id: orders[order].id,
               status: orders[order].status,
-              item: ['test object 1', 'test object 2', 't3', 't4', 't5', 't1234'][i%6] ,//orders[order].item.join("\n"),
+              item: ['test object 1', 'test object 2', 't3', 't4', 't5', 't1234'][i%6],//orders[order].item.join("\n"),
               quantity: i+1 % 11,
               price: orders[order].price
             }

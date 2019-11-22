@@ -35,7 +35,11 @@
         console.log("category", category)	
         this.$router.push('/shop');	
         console.log(this.category);	
-      }	
+      }
+
+    },
+    created(){
+      console.log(this.announcement)
     }
   };
   </script>

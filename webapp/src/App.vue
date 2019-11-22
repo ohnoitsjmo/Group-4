@@ -10,7 +10,7 @@
             Menu
             <i class="fas fa-bars"></i>
           </button> -->
-          <div> {{this.$store.state.user.loggedIn}}   {{this.$store.state.user.userLevel}} </div>
+          <div> {{this.$store.state.user.userLevel}} </div>
           <div class="collapse navbar-collapse" id="navbarResponsive">
             <ul class="navbar-nav text-uppercase ml-auto">
               <ul class="nav-item">
