@@ -9,6 +9,11 @@
             <p class="display-1 text--primary">
                 {{announcement.announce}}
             </p>
+             <template v-if="this.$store.state.user.userLevel == 'Admin' ">
+            <v-flex class="text-xs-right">
+            <v-btn @click="removeAnnouncement(announcement)" absolute top right small color= "#E53935">X</v-btn>
+            </v-flex>
+            </template>
         </v-card-text>
         <v-card-actions>
             <v-btn
@@ -23,6 +28,7 @@
 </template>
 
 <script>
+import {AnnouncementModel} from "@/store.js";
   export default {
     name: 'Announcement',
     props: {
@@ -35,8 +41,10 @@
         console.log("category", category)	
         this.$router.push('/shop');	
         console.log(this.category);	
+      },
+      removeAnnouncement(announcement) {
+          AnnouncementModel.removeAnnouncement(announcement.id);
       }
-
     },
     created(){
       console.log(this.announcement)

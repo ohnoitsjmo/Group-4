@@ -13,6 +13,7 @@
               <Announcement :announcement="announcement"/>
             </v-card>
           </v-col>
+          
         </template>
       </v-row>
     </v-container>

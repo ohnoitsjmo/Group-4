@@ -22,6 +22,18 @@ export default class AnnouncementDataModel {
       });
     }
   
+    removeAnnouncement(id) {
+      for(var i = 0; i < this.postedAnnouncements.length; i++)
+      {
+        if(this.postedAnnouncements[i].id == id)
+        {
+          this.postedAnnouncements.splice(i, 1);
+          break;
+        }
+      }
+      console.log("Announcement removed, announcements are : ", this.postedAnnouncements);
+    }
+
     appendAnnouncements(data) {
       data.forEach(announcement => {
           this.postedAnnouncements.push({

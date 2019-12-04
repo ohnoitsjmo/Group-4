@@ -6,6 +6,14 @@
         <div class="intro-text">
           <div class="intro-lead-in">ANNOUNCEMENTS</div>
             <PostedAnnouncements :announcements="announcements" v-bind:key="this.loading"/>
+            <template v-if="this.$store.state.user.userLevel == 'Admin' ">
+            <v-btn 
+               color= #42b983
+               @click="addAnnouncement"  
+             >
+                + Add Announcement
+            </v-btn>
+            </template>
           </div> 
           <!-- <div class="text-center">
             <v-pagination
