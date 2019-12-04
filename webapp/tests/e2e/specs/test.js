@@ -192,7 +192,7 @@ describe("Shop Test", () => {
     cy.get(':nth-child(1) > .v-stepper__wrapper > .v-size--default').click();
     cy.get('#input-42').type("John Smith");
     cy.get('#input-45').type("123412341234");
-    cy.get('#input-48').type("12/1998");
+    cy.get('#input-48').type("12/2019");
 
     //place orders
     cy.get(':nth-child(2) > .v-stepper__wrapper > [style="background-color: rgb(66, 185, 131); border-color: rgb(66, 185, 131);"]').click();
