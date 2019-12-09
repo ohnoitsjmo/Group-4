@@ -8,3 +8,9 @@ export async function fetchOrders () {
     console.log(response.data)
     return response.data;
 };
+
+export async function deleteOrder (id) {
+    let response = await axios.delete('api/order/'+id)
+    console.log(response.data)
+    return response.data;
+};

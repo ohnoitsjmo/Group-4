@@ -1,79 +1,40 @@
 <template>
-    <div class="table">
-        <mdb-datatable
-            class="justify-content-center"
-            :data="data"
-            striped
-            bordered
-            v-bind:key="this.loading"
-        />
+    <div class="orders">
+        <OrderDetails v-bind:key="this.loading"/>
+        <div class="text-center">
+          <mdb-btn color="grey" rounded type="button" class="z-depth-1a" v-on:click="deleteOrder()">Delete Order&nbsp;</mdb-btn>
+           <input type="text"
+           id="myText"
+           style="border:1px solid grey;"
+           value=""> 
+        </div>
     </div>
 </template>
 
 <script>
-  import { mdbDatatable } from 'mdbvue';
-  import {fetchOrders} from "@/controllers/order_management/OrdersController.js";
+  import OrderDetails from "@/common/components/order_management/OrderDetails.vue";
+  import {deleteOrder} from "@/controllers/order_management/OrdersController.js";
   export default {
     name: 'DatatablePage',
     components: {
-      mdbDatatable
+      OrderDetails
     },
     created() {
-      this.fetchOrders();
+      this.deleteOrder();
     },
     methods: {
-      async fetchOrders() {
+      async deleteOrder() {
         this.loading = true
-        let orders = await fetchOrders();
-        let i = 0;
-        for(var order in orders){
-          this.data.rows.push(
-            {
-              id: orders[order].id,
-              status: orders[order].status,
-              item: ['test object 1', 'test object 2', 't3', 't4', 't5', 't1234'][i%6],//orders[order].item.join("\n"),
-              quantity: i+1 % 11,
-              price: orders[order].price
-            }
-          )
-          i++;
-        }
-        console.log(this.data.rows)
+        var id = document.getElementById("myText").value; 
+        document.getElementById("myText").value = "";
+        let orders = await deleteOrder(id);
         this.loading = false;
+        this.$router.go(0);
       }
     },
     data() {
       return {
-        data: {
-          columns: [
-            {
-              label: 'Order ID',
-              field: 'id',
-              sort: 'asc'
-            },
-            {
-              label: 'Status',
-              field: 'status',
-              sort: 'asc'
-            },
-            {
-              label: 'Item',
-              field: 'item',
-              sort: 'asc'
-            },
-            {
-              label: 'Quantity',
-              field: 'quantity',
-              sort: 'asc'
-            },
-            {
-              label: 'Price',
-              field: 'price',
-              sort: 'asc'
-            }
-          ],
-          rows: []
-        }
+        loading: true
       }
     }
   }
